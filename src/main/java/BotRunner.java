@@ -22,5 +22,6 @@ public class Main {
         }
 
         JDA api  = new JDABuilder(token).build();
+
     }
 }
