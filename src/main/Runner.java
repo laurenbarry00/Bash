@@ -11,7 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Runner {
-    Logger log = LoggerFactory.getLogger(Runner.class);
+    static Logger log = LoggerFactory.getLogger(Runner.class);
     private static  String token = "";
 
     private static void loadToken() {
@@ -32,5 +32,8 @@ public class Runner {
         api.getPresence().setStatus(OnlineStatus.ONLINE);
 
         api.addEventListener(new CommandHandler());
+        log.info("Bash logged into " + api.getGuilds().size() + " Discord servers upon startup.");
+
+
     }
 }
