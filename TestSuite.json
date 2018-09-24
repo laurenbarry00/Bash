@@ -1,0 +1,1 @@
+{"!help":{"input":"!help","expectedResult":"FAIL_OTHER","actualResult":"PASS"},"!ping":{"input":"!ping","expectedResult":"PASS","actualResult":"FAIL_UNEXPECTED_OUTPUT"}}

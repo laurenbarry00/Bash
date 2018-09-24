@@ -1,4 +1,4 @@
-import com.google.gson.Gson;
+import com.google.gson.*;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.util.List;
+import java.util.Set;
 
 public class Runner {
     static Logger log = LoggerFactory.getLogger(Runner.class);
@@ -36,21 +36,50 @@ public class Runner {
 
         api.getPresence().setStatus(OnlineStatus.ONLINE);
 
-        TestSuite suite = new TestSuite();
-        TestCase case1 = new TestCase("!ping", TestResult.PASS, TestResult.FAIL_UNEXPECTED_OUTPUT);
-        TestCase case2 = new TestCase("!help", TestResult.FAIL_OTHER, TestResult.PASS);
+        File testSuite = new File("TestSuite.json");
+        if (testSuite.exists()) {
+            JsonParser jsonParser = new JsonParser();
+            try {
+                FileReader reader = new FileReader("TestSuite.json");
+                TestSuite suite = new TestSuite();
 
-        suite.add(case1, case2); // TODO: For some reason, add will only add one of the test cases???
+                JsonObject obj = (JsonObject) jsonParser.parse(reader);
+                Set<String> keySet = obj.keySet();
+                for (String key : keySet) {
+                    JsonObject json = (JsonObject) obj.get(key);
+                    String input = json.get("input").toString();
+                    String expectedString = json.get("expectedResult").toString();
+                    String actualString = json.get("actualResult").toString();
 
-        JSONObject jo = suite.toJsonObject(); // Saving the suite to a JSONObject is easier than hardcoding the entire thing, so we can just load in changes instead of recompiling
-        Gson gson = new Gson();
+                    StringBuilder builder = new StringBuilder();
+                    for (int i = 0; i < input.length(); i++) {
+                        if (input.charAt(i) != '\"') {
+                            builder.append(input.charAt(i));
+                        }
+                    }
+                    input = builder.toString();
 
-        // This is here only to test file IO, will eventually move to someplace else
-        try {
-            gson.toJson(jo, new FileWriter("TestSuite.json"));
-            TestSuite suite2 = gson.fromJson(new FileReader("TestSuite.json"), TestSuite.class);
-        } catch (IOException e) {
-            e.printStackTrace();
+                    TestResult expected = TestResult.getTestResultFromString(expectedString);
+                    TestResult actual = TestResult.getTestResultFromString(actualString);
+                    TestCase currentCase = new TestCase(input, expected, actual);
+                    suite.add(currentCase);
+                }
+                Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                System.out.println(gson.toJson(obj));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            TestSuite suite = new TestSuite();
+            JSONObject jo = suite.toJsonObject(); // Saving the suite to a JSONObject is easier than hardcoding the entire thing, so we can just load in changes instead of recompiling
+
+            try {
+                FileWriter writer = new FileWriter("TestSuite.json");
+                writer.write(jo.toString());
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
