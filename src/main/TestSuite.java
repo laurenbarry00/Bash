@@ -1,9 +1,8 @@
 import org.json.JSONObject;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class TestSuite implements Serializable {
+public class TestSuite {
     private ArrayList<TestCase> cases;
 
 

@@ -39,8 +39,6 @@ public class Runner {
         TestSuite suite = new TestSuite();
         TestCase case1 = new TestCase("!ping", TestResult.PASS, TestResult.FAIL_UNEXPECTED_OUTPUT);
         TestCase case2 = new TestCase("!help", TestResult.FAIL_OTHER, TestResult.PASS);
-        case1.setName("Ping");
-        case2.setName("Help");
 
         suite.add(case1, case2); // TODO: For some reason, add will only add one of the test cases???
 

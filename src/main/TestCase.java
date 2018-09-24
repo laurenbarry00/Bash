@@ -1,15 +1,12 @@
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.entities.TextChannel;
 import org.json.JSONObject;
-
-import java.io.Serializable;
 import java.util.List;
 
-public class TestCase implements Serializable {
-    private static String caseName; // Only used for reference in JSON config, not needed in actual use
-    private static String input;
-    private static TestResult expectedResult;
-    private static TestResult actualResult;
+public class TestCase {
+    private String input;
+    private TestResult expectedResult;
+    private TestResult actualResult;
 
     public TestCase() {
         input = null;
@@ -17,18 +14,10 @@ public class TestCase implements Serializable {
         actualResult = null;
     }
 
-    public TestCase(String input, TestResult expected, TestResult actual) {
-        this.input = input;
+    public TestCase(String command, TestResult expected, TestResult actual) {
+        input = command;
         expectedResult = expected;
         actualResult = actual;
-    }
-
-    public String getName() {
-        return caseName;
-    }
-
-    public void setName(String name) {
-        caseName = name;
     }
 
     public String getInput() {
@@ -79,7 +68,6 @@ public class TestCase implements Serializable {
 
     public JSONObject toJsonObject() {
         JSONObject jo = new JSONObject();
-        jo.put("name", getName());
         jo.put("input", getInput());
         jo.put("expectedResult", getExpectedResult());
         jo.put("actualResult", getActualResult());
