@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2a228221-0203-4fd9-a70e-e26ecd2a5895" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Bash.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Bash.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestSuite.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Bash/Runner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bash/Runner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/EventHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TestCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/TestResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TestResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TestSuite.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/BashBot/target/" />
@@ -18,57 +28,66 @@
     <session id="31909783">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="15" />
+          <entry key="project.closed" value="28" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="3" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="3" />
           <entry key="project.open.time.18" value="1" />
-          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.23" value="3" />
           <entry key="project.open.time.24" value="2" />
-          <entry key="project.open.time.29" value="1" />
-          <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.29" value="3" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.31" value="2" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.47" value="1" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="11" />
+          <entry key="class" value="14" />
           <entry key="iml" value="1" />
-          <entry key="java" value="10" />
-          <entry key="json" value="7" />
+          <entry key="java" value="24" />
+          <entry key="json" value="15" />
           <entry key="md" value="1" />
           <entry key="ser" value="1" />
           <entry key="txt" value="1" />
-          <entry key="xml" value="9" />
+          <entry key="xml" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="11" />
+          <entry key="CLASS" value="14" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="10" />
-          <entry key="JSON" value="7" />
+          <entry key="JAVA" value="24" />
+          <entry key="JSON" value="15" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="XML" value="9" />
+          <entry key="XML" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="12" />
-          <entry key="java" value="19803" />
+          <entry key="java" value="32466" />
+          <entry key="json" value="182" />
           <entry key="md" value="93" />
-          <entry key="xml" value="60" />
+          <entry key="xml" value="61" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="19803" />
+          <entry key="JAVA" value="32466" />
+          <entry key="JSON" value="182" />
           <entry key="PLAIN_TEXT" value="105" />
-          <entry key="XML" value="60" />
+          <entry key="XML" value="61" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -94,54 +113,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/Runner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="67" column="55" selection-start-line="67" selection-start-column="55" selection-end-line="67" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/TestResult.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/TestSuite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+            <state relative-caret-position="1292">
+              <caret line="103" column="44" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#200#201#0" expanded="true" />
-                <element signature="e#248#249#0" expanded="true" />
                 <element signature="method#TestSuite#1;class#TestSuite#0" />
                 <element signature="method#add#0;class#TestSuite#0" />
-                <element signature="method#remove#0;class#TestSuite#0" />
-                <element signature="method#runAllTests#0;class#TestSuite#0" />
+                <element signature="method#search#0;class#TestSuite#0" />
                 <element signature="method#toJsonObject#0;class#TestSuite#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/TestCase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="238">
+              <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#toJsonObject#0;class#TestCase#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/EventHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#runTestCase#0;class#TestCase#0" />
               </folding>
             </state>
           </provider>
@@ -156,6 +164,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>output</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -174,12 +187,18 @@
         <option value="$PROJECT_DIR$/src/main/testing/TestCase.java" />
         <option value="$PROJECT_DIR$/src/main/testing/TestSuite.java" />
         <option value="$PROJECT_DIR$/src/main/CommandHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/EventHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/TestSuite.java" />
-        <option value="$PROJECT_DIR$/src/main/TestCase.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/TestExecutedEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/TestExecutedFlag.java" />
+        <option value="$PROJECT_DIR$/src/tests.json" />
         <option value="$PROJECT_DIR$/src/main/TestResult.java" />
+        <option value="$PROJECT_DIR$/src/main/TestRunEvent.java" />
+        <option value="$PROJECT_DIR$/TestSuite.json" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/TestSuite.java" />
+        <option value="$PROJECT_DIR$/src/main/Command.java" />
         <option value="$PROJECT_DIR$/src/main/Runner.java" />
+        <option value="$PROJECT_DIR$/src/main/EventHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/TestCase.java" />
       </list>
     </option>
   </component>
@@ -191,10 +210,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-6" />
-    <option name="y" value="-6" />
-    <option name="width" value="1106" />
-    <option name="height" value="627" />
+    <option name="x" value="-7" />
+    <option name="y" value="-7" />
+    <option name="width" value="1110" />
+    <option name="height" value="608" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -202,15 +221,20 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Bash" type="b2602c69:ProjectViewProjectNode" />
               <item name="Bash" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Bash" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Bash" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Bash" type="b2602c69:ProjectViewProjectNode" />
@@ -223,10 +247,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Bash" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -238,10 +258,10 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/flame/Coding/Bash/src/main/EventHandler.java" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537807849602" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538768406189" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/resources/gson-2.8.5.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../1A Libraries/selenium-java" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -311,20 +331,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1728" height="1117" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14131737" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16107784" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.329718" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.328934" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3286334" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.32690355" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" visible="true" weight="0.39796954" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.36649746" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.329718" />
@@ -340,6 +359,34 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15724947" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.328934" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3286334" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32690355" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.36649746" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.329718" />
+      <window_info anchor="bottom" id="TODO" order="8" weight="0.329718" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -348,18 +395,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/Bash" />
     </ignored-roots>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Runner.java</url>
-          <line>74</line>
-          <properties />
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -428,22 +463,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/EventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestCase.ser" />
     <entry file="jar://$PROJECT_DIR$/src/resources/gson-2.8.5.jar!/com/google/gson/stream/JsonReader.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
           <caret line="1249" selection-start-line="1249" selection-end-line="1249" />
-          <folding>
-            <element signature="e#37875#38781#0" expanded="true" />
-            <element signature="e#38780#38781#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -454,13 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/src/resources/JDA-3.7.1_385-withDependencies.jar!/org/json/JSONObject.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -468,17 +485,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestSuite.json">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/main/TestExecutedEvent.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/TestExecutedFlag.java" />
+    <entry file="file://$PROJECT_DIR$/src/tests.json" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/UUID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="193" selection-start-line="193" selection-end-line="193" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/resources/gson-2.8.5.jar!/com/google/gson/JsonElement.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/src/resources/gson-2.8.5.jar!/com/google/gson/internal/LinkedTreeMap.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="49" selection-start-line="49" selection-end-line="49" />
-          <folding>
-            <element signature="e#11744#11910#0" expanded="true" />
-            <element signature="e#11909#11910#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -486,31 +513,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
           <caret line="79" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="e#2235#2236#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/TestRunEvent.java" />
+    <entry file="file://$PROJECT_DIR$/TestSuite.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/TestResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="442">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#loadToken#0;class#Runner#0" />
+            <element signature="method#loadJsonTestSuite#0;class#Runner#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/EventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/TestSuite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+        <state relative-caret-position="1292">
+          <caret line="103" column="44" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#200#201#0" expanded="true" />
-            <element signature="e#248#249#0" expanded="true" />
             <element signature="method#TestSuite#1;class#TestSuite#0" />
             <element signature="method#add#0;class#TestSuite#0" />
-            <element signature="method#remove#0;class#TestSuite#0" />
-            <element signature="method#runAllTests#0;class#TestSuite#0" />
+            <element signature="method#search#0;class#TestSuite#0" />
             <element signature="method#toJsonObject#0;class#TestSuite#0" />
           </folding>
         </state>
@@ -518,21 +584,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/TestCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="238">
+          <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
           <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="method#runTestCase#0;class#TestCase#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="67" column="55" selection-start-line="67" selection-start-column="55" selection-end-line="67" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#toJsonObject#0;class#TestCase#0" />
           </folding>
         </state>
       </provider>

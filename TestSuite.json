@@ -1,1 +1,14 @@
-{"!help":{"input":"!help","expectedResult":"FAIL_OTHER","actualResult":"PASS"},"!ping":{"input":"!ping","expectedResult":"PASS","actualResult":"FAIL_UNEXPECTED_OUTPUT"}}
+{
+  "!help": {
+    "input":"!help",
+    "expectedResult":"FAIL_UNEXPECTED_OUTPUT",
+    "uuid":"5fc19817-02e3-4cb6-8d0c-f72a1961aee8",
+    "actualResult":"FAIL_OTHER"
+  },
+  "!ping": {
+    "input":"!ping",
+    "expectedResult":"PASS",
+    "uuid":"4dcbf0f1-94d9-4f3e-be80-d09ebd5f530c",
+    "actualResult":"FAIL_UNEXPECTED_OUTPUT"
+  }
+}

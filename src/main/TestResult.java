@@ -6,6 +6,13 @@ public enum TestResult {
     // Other types of test results?
     static TestResult getTestResultFromString(String s) {
         TestResult result = null;
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != '"') {
+                builder.append(s.charAt(i));
+            }
+        }
+        s = builder.toString();
         switch(s) {
             case "PASS":
                 result = PASS;
