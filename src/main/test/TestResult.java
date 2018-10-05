@@ -1,11 +1,18 @@
+package test;
+
 public enum TestResult {
     PASS,
     FAIL_UNEXPECTED_OUTPUT,
     FAIL_OTHER;
 
-    // Other types of test results?
-    static TestResult getTestResultFromString(String s) {
-        TestResult result = null;
+
+    /**
+     *
+     * @param s Input to be converted to enum
+     * @return TestResult enum
+     */
+    public static TestResult getTestResultFromString(String s) {
+        TestResult result;
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) != '"') {
@@ -23,6 +30,8 @@ public enum TestResult {
             case "FAIL_OTHER":
                 result = FAIL_OTHER;
                 break;
+            default:
+                return null;
         }
         return result;
     }

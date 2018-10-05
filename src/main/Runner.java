@@ -12,6 +12,9 @@ import net.dv8tion.jda.core.OnlineStatus;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import test.TestCase;
+import test.TestResult;
+import test.TestSuite;
 
 import javax.security.auth.login.LoginException;
 import java.io.*;
@@ -19,10 +22,10 @@ import java.util.Set;
 import java.util.UUID;
 
 public class Runner {
-    static Logger log = LoggerFactory.getLogger(Runner.class);
-    public static JDA api;
+    static final Logger log = LoggerFactory.getLogger(Runner.class);
+    private static JDA api;
     private static String token = "";
-    static TestSuite suite;
+    public static TestSuite suite;
 
     /**
      * Loads Bot token from file. Token is PRIVATE, not on source control.
@@ -115,6 +118,9 @@ public class Runner {
         }
     }
 
+    /**
+     * Saves the current TestSuite to JSON.
+     */
     static void saveJsonTestSuite() {
         try {
             File testSuiteFile = new File("TestSuite.json");
@@ -131,6 +137,7 @@ public class Runner {
             e.printStackTrace();
         }
     }
+
     public static void main(String[] args) {
         loadToken();
 

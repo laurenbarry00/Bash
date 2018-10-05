@@ -1,6 +1,10 @@
+package test;
+
 import net.dv8tion.jda.core.EmbedBuilder;
+import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.entities.TextChannel;
 import org.json.JSONObject;
+import org.slf4j.Logger;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -63,6 +67,14 @@ public class TestSuite {
     }
 
     /**
+     * Returns the number of TestCases in the suite
+     * @return Size of cases
+     */
+    public int size() {
+        return cases.size();
+    }
+
+    /**
      * Finds and retrieves a TestCase object for a given index.
      * @param index The index of the object that is being retrieved.
      * @return Returns the TestCase object found.
@@ -97,21 +109,23 @@ public class TestSuite {
 
     /**
      * Loops through all TestCases in the TestSuite and executes them. Counts and confirms the number of tests executed.
+     * @param api JDA API
+     * @param log SLF4J logger
      */
-    public void runAllTests() {
+    public void runAllTests(JDA api, Logger log) {
         int testsRan = 0;
         for (int i = 0; i < cases.size(); i++) {
             TestCase current = cases.get(i);
-            testsRan += current.execute(Runner.api);
+            testsRan += current.execute(api);
         }
 
         EmbedBuilder builder = new EmbedBuilder();
         builder.addField("Tests Ran:", String.valueOf(testsRan), false);
         builder.setTimestamp(LocalDateTime.now()); // Display the number of tests run after completion
 
-        List<TextChannel> channels = Runner.api.getTextChannelsByName("testing", true);
+        List<TextChannel> channels = api.getTextChannelsByName("testing", true);
         channels.get(0).sendMessage(builder.build()).queue();
-        Runner.log.info("Successfully ran " + testsRan + "  out of " + cases.size() + " test cases in suite."); // Log the number of tests run
+        log.info("Successfully ran " + testsRan + "  out of " + cases.size() + " test cases in suite."); // Log the number of tests run
     }
 
     /**

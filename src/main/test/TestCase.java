@@ -1,4 +1,4 @@
-/**
+package test; /**
  *
  */
 
@@ -74,8 +74,8 @@ public class TestCase {
     }
 
     /**
-     *
-     * @param output
+     * Set a string as the expected output
+     * @param output String expected output
      */
     public void setOutput(String output) {
         this.output = output;
