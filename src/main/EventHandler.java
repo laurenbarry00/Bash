@@ -18,4 +18,10 @@ public class EventHandler extends ListenerAdapter {
         Runner.log.info("Bash logged into " + event.getJDA().getGuilds().size() + " Discord server(s) upon startup.");
         Runner.log.info("Ping: " + event.getJDA().getPing() + " at " + LocalDateTime.now());
     }
+
+    @Override
+    @SubscribeEvent
+    public void onDisconnect(DisconnectEvent event) {
+        Runner.saveJsonTestSuite();
+    }
 }

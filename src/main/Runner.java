@@ -115,7 +115,22 @@ public class Runner {
         }
     }
 
+    static void saveJsonTestSuite() {
+        try {
+            File testSuiteFile = new File("TestSuite.json");
+            if (!testSuiteFile.exists()) {
+                testSuiteFile.createNewFile();
+            }
+            JSONObject json = suite.toJsonObject();
+            FileWriter writer = new FileWriter(testSuiteFile);
+            writer.write(json.toString());
+            writer.close();
 
+        } catch (IOException e) {
+            log.error("Could not save TestSuite to JSON file!");
+            e.printStackTrace();
+        }
+    }
     public static void main(String[] args) {
         loadToken();
 
