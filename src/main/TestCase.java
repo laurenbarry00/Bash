@@ -13,6 +13,7 @@ import java.util.UUID;
 public class TestCase {
     private UUID caseUUID;
     private String input;
+    private String output;
     private TestResult expectedResult;
     private TestResult actualResult;
 
@@ -62,6 +63,22 @@ public class TestCase {
      */
     public void setInput(String command) {
         input = command;
+    }
+
+    /**
+     * Retrieves the string of the expected output
+     * @return expected output (as string)
+     */
+    public String getOutput() {
+        return output;
+    }
+
+    /**
+     *
+     * @param output
+     */
+    public void setOutput(String output) {
+        this.output = output;
     }
 
     /**
