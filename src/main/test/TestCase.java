@@ -134,13 +134,13 @@ public class TestCase {
     /**
      * Runs the TestCase by sending a command to the server's #testing channel.
      * @param api JDA instance
-     * @return 1 if successful, 0 if not
+     * @return 0 if successful
      */
     public int execute(JDA api) {
         List<TextChannel> channels = api.getTextChannelsByName("testing", true);
         MessageAction action = channels.get(0).sendMessage(getInput());
         if (action != null) { // sendMessage() returns a a MessageAction upon success
-            return 1;
+            return -1;
         }
 
         return 0; // Returns 1 if successful - for use in TestSuite (counting all tests ran successfully)

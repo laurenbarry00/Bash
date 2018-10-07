@@ -7,7 +7,7 @@ public enum TestResult {
 
 
     /**
-     *
+     * Converts string to TestResult enum
      * @param s Input to be converted to enum
      * @return TestResult enum
      */
