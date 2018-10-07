@@ -5,6 +5,7 @@
  */
 
 import com.google.gson.*;
+import commands.Command;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
@@ -18,11 +19,14 @@ import test.TestSuite;
 
 import javax.security.auth.login.LoginException;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
 public class Runner {
     static final Logger log = LoggerFactory.getLogger(Runner.class);
+    private static List<Command> commandsList;
     private static JDA api;
     private static String token = "";
     public static TestSuite suite;
@@ -44,7 +48,7 @@ public class Runner {
     /**
      * Creates or loads a TestSuite from JSON.
      */
-    static void loadJsonTestSuite() {
+    private static void loadJsonTestSuite() {
         File testSuite = new File("TestSuite.json");
         if (testSuite.exists() && testSuite.length() > 0) {
             JsonParser jsonParser = new JsonParser();
@@ -138,6 +142,19 @@ public class Runner {
         }
     }
 
+    private static void createAndFillCommandsList() {
+        commandsList = new ArrayList();
+
+    }
+
+    public static List<Command> getCommandsList() {
+        return commandsList;
+    }
+
+    public static TestSuite getTestSuite() {
+        return suite;
+    }
+
     public static void main(String[] args) {
         loadToken();
 
@@ -155,7 +172,6 @@ public class Runner {
             e.printStackTrace();
         }
         loadJsonTestSuite();
-
-
+        createAndFillCommandsList();
     }
 }

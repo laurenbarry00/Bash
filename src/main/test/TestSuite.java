@@ -13,7 +13,6 @@ import java.util.List;
 public class TestSuite {
     private ArrayList<TestCase> cases;
 
-
     /**
      * Default constructor that initializes a new TestSuite object. Initial capacity is 10.
      */
