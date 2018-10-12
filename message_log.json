@@ -1,0 +1,1 @@
+{"color":15684432,"footer":{"text":"Command category: Utility"},"description":"Division by zero","title":"Calculate Command","fields":[{"inline":false,"name":"Usage","value":"`!calculate <equation>` - Calculates the result of the given math equation."},{"inline":false,"name":"Example Usage","value":"`!calculate (-50 + sqrt(50 ^ 2 - ((4 * 5) * (100 - 955)))) / (2 * 5) == 9`"}]}

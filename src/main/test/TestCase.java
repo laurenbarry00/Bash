@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.UUID;
 
 public class TestCase {
-    private UUID caseUUID;
     private String input;
     private String output;
     private TestResult expectedResult;
@@ -19,7 +18,6 @@ public class TestCase {
      * Default constructor with randomized UUID. Default expected result is TestResult.PASS
      */
     public TestCase() {
-        caseUUID = UUID.randomUUID();
         input = null;
         expectedResult = TestResult.PASS; // Assuming that we'd want tests to pass by default
         actualResult = null;
@@ -27,24 +25,14 @@ public class TestCase {
 
     /**
      * Overloaded constructor to manually set all fields.
-     * @param uuid The TestCase's UUID
      * @param command Input to be executed upon case being run
      * @param expected The expected result of the TestCase
      * @param actual The actual result of the TestCase
      */
-    public TestCase(UUID uuid, String command, TestResult expected, TestResult actual) {
-        caseUUID = uuid;
+    public TestCase(String command, TestResult expected, TestResult actual) {
         input = command;
         expectedResult = expected;
         actualResult = actual;
-    }
-
-    /**
-     * Returns a TestCase's UUID
-     * @return uuid
-     */
-    public UUID getUUID() {
-        return caseUUID;
     }
 
     /**
@@ -138,12 +126,13 @@ public class TestCase {
      */
     public int execute(JDA api) {
         List<TextChannel> channels = api.getTextChannelsByName("testing", true);
+        channels.get(0).sendMessage(getInput()).queue();
         MessageAction action = channels.get(0).sendMessage(getInput());
-        if (action != null) { // sendMessage() returns a a MessageAction upon success
-            return -1;
+        if (action == null) { // sendMessage() returns a a MessageAction upon success
+            return 0;
         }
 
-        return 0; // Returns 1 if successful - for use in TestSuite (counting all tests ran successfully)
+        return 1; // Returns 1 if successful - for use in TestSuite (counting all tests ran successfully)
     }
 
     /**
@@ -152,7 +141,6 @@ public class TestCase {
      */
     public JSONObject toJsonObject() {
         JSONObject jo = new JSONObject();
-        jo.put("uuid", caseUUID.toString());
         jo.put("input", getInput());
         jo.put("expectedResult", getExpectedResult());
         jo.put("actualResult", getActualResult());

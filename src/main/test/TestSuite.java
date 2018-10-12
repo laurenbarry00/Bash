@@ -6,9 +6,14 @@ import net.dv8tion.jda.core.entities.TextChannel;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 
+import java.awt.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class TestSuite {
     private ArrayList<TestCase> cases;
@@ -113,18 +118,32 @@ public class TestSuite {
      */
     public void runAllTests(JDA api, Logger log) {
         int testsRan = 0;
-        for (int i = 0; i < cases.size(); i++) {
-            TestCase current = cases.get(i);
-            testsRan += current.execute(api);
+        try {
+            for (int i = 0; i < cases.size(); i++) {
+                TestCase current = cases.get(i);
+                TimeUnit.SECONDS.sleep(3); // for rate limiting
+                testsRan += current.execute(api);
+
+                try {
+                    FileReader reader = new FileReader(new File("message_log.json"));
+
+                } catch (IOException e) {
+                    log.error("Could not read message from message log file!");
+                    log.error(e.getMessage());
+                }
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            EmbedBuilder builder = new EmbedBuilder();
+            builder.setTitle("Test Report");
+            builder.addField("Tests Ran:", String.valueOf(testsRan), false);
+            builder.setColor(new Color(43, 104, 174));
+
+            List<TextChannel> channels = api.getTextChannelsByName("testing", true);
+            channels.get(0).sendMessage(builder.build()).queue();
+            log.info("Successfully ran " + testsRan + "  out of " + cases.size() + " test cases in suite."); // Log the number of tests run
         }
-
-        EmbedBuilder builder = new EmbedBuilder();
-        builder.addField("Tests Ran:", String.valueOf(testsRan), false);
-        builder.setTimestamp(LocalDateTime.now()); // Display the number of tests run after completion
-
-        List<TextChannel> channels = api.getTextChannelsByName("testing", true);
-        channels.get(0).sendMessage(builder.build()).queue();
-        log.info("Successfully ran " + testsRan + "  out of " + cases.size() + " test cases in suite."); // Log the number of tests run
     }
 
     /**

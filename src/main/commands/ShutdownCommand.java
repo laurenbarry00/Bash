@@ -1,14 +1,10 @@
 package commands;
 
-
 import bash.Runner;
-import test.TestSuite;
 
-import java.util.List;
-
-public class RunAllTestsCommand implements Command {
-    private final String input = "?runalltests";
-    private final String regexInput = "\\?(runalltests)"; // Regex format for comparison purposes
+public class ShutdownCommand implements Command {
+    private final String input = "?shutdown";
+    private final String regexInput = "\\?(shutdown)"; // Regex format for comparison purposes
     private final String regexOutput = null; // An output String in the format of display is not necessary, because we only need the output for comparison, hence RegEx
 
     /**
@@ -41,9 +37,6 @@ public class RunAllTestsCommand implements Command {
      * Executes all tests in Bash's TestSuite
      */
     public void execute() {
-        List<TestSuite> list = Runner.getTestSuiteList();
-        for (TestSuite suite : list) {
-            suite.runAllTests(Runner.getApi(), Runner.getLogger());
-        }
+        Runner.getApi().shutdownNow();
     }
 }

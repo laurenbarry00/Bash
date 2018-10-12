@@ -1,6 +1,8 @@
 package bash;
 
+import com.google.gson.Gson;
 import commands.Command;
+import net.dv8tion.jda.core.OnlineStatus;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.DisconnectEvent;
@@ -8,8 +10,12 @@ import net.dv8tion.jda.core.events.ReadyEvent;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 import net.dv8tion.jda.core.hooks.SubscribeEvent;
+import org.json.JSONObject;
 import test.TestSuite;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -32,22 +38,31 @@ public class EventHandler extends ListenerAdapter {
         User author = event.getAuthor();
         Message message = event.getMessage();
         if (author.isBot()) {
-            if (author.getName().equalsIgnoreCase("AvaIre")) { // We only want to respond to AvaIre, other bots don't matter.
-                TestSuite suite = Runner.getTestSuite();
-
-                for (int i = 0; i < suite.size(); i++) {
-                    // Use fancy RegEx to compare expected output String to actual output received here
+            try {
+                File testSuiteFile = new File("message_log.json");
+                if (!testSuiteFile.exists()) {
+                    testSuiteFile.createNewFile();
                 }
-            } else {
-                return; // Ignore all input from bots other than AvaIre
+                FileWriter writer = new FileWriter(testSuiteFile);
+                if (message.getEmbeds() != null) {
+                    JSONObject jo = message.getEmbeds().get(0).toJSONObject();
+                    writer.append(jo.toString());
+                } else {
+                    writer.append(message.getContentRaw());
+                }
+                writer.flush();
+            } catch (IOException e) {
+                Runner.getLogger().error("Could not save message " + message.getContentDisplay() + " to JSON file!");
+                e.printStackTrace();
             }
         } else { // User is human, who presumably wants to use commands to control Bash.
              List<Command> commandsList = Runner.getCommandsList();
              for (int i = 0; i < commandsList.size(); i++) {
                  Command current = commandsList.get(i);
 
-                 if (message.toString().matches(current.getRegexOutput())) {
+                 if (message.getContentDisplay().matches(current.getRegexInput())) {
                      current.execute();
+                     break;
                  }
              }
         }
@@ -61,5 +76,6 @@ public class EventHandler extends ListenerAdapter {
     @SubscribeEvent
     public void onDisconnect(DisconnectEvent event) {
         Runner.saveJsonTestSuite();
+        Runner.getApi().getPresence().setPresence(OnlineStatus.OFFLINE, false);
     }
 }

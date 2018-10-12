@@ -1,12 +1,13 @@
 package bash; /**
  * The bash class in which the bot in initialized.
  * @author Lauren Barry
- * @version 1.0
  */
 
 import com.google.gson.*;
+import com.google.gson.stream.JsonReader;
 import commands.Command;
 import commands.RunAllTestsCommand;
+import commands.ShutdownCommand;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
@@ -30,7 +31,7 @@ public class Runner {
     private static List<Command> commandsList;
     private static JDA api;
     private static String token = "";
-    private static TestSuite suite;
+    private static List<TestSuite> suiteList = new ArrayList<>();
 
 
     /**
@@ -51,77 +52,50 @@ public class Runner {
      * Creates or loads a TestSuite from JSON.
      */
     private static void loadJsonTestSuite() {
-        File testSuite = new File("TestSuite.json");
-        if (testSuite.exists() && testSuite.length() > 0) {
-            JsonParser jsonParser = new JsonParser();
-            try {
-                FileReader reader = new FileReader("TestSuite.json");
-                suite = new TestSuite();
+        File folder = new File("C:\\Users\\flame\\Coding\\Bash\\tests");
+        File[] fileList = folder.listFiles();
 
-                JsonElement element = jsonParser.parse(reader);
-                JsonObject obj = element.getAsJsonObject();
-                Set<String> keySet = obj.keySet();
-                for (String key : keySet) {
-                    JsonObject current = obj.getAsJsonObject(key);
-                    UUID newUUID;
-                    try {
-                        String uuid = current.get("uuid").toString();
+        for (File testSuite : fileList) {
+            if (testSuite.exists() && testSuite.length() > 0) {
+                JsonParser jsonParser = new JsonParser();
+                try {
+                    FileReader r = new FileReader(testSuite);
+                    JsonReader reader = new JsonReader(r);
+                    reader.setLenient(true);
+                    TestSuite suite = new TestSuite();
+
+                    JsonElement element = jsonParser.parse(reader);
+                    JsonObject obj = element.getAsJsonObject();
+                    Set<String> keySet = obj.keySet();
+                    for (String key : keySet) {
+                        JsonObject current = obj.getAsJsonObject(key);
+                        String input = current.get("input").toString();
+                        String expectedString = current.get("expectedResult").toString();
+                        String actualString = current.get("actualResult").toString();
+
                         StringBuilder builder = new StringBuilder();
-                        for (int i = 0; i < uuid.length(); i++) {
-                            if (uuid.charAt(i) != '"') {
-                                builder.append(uuid.charAt(i));
+                        for (int i = 0; i < input.length(); i++) {
+                            if (input.charAt(i) != '\"' && input.charAt(i) != '"') {
+                                builder.append(input.charAt(i));
                             }
                         }
-                        uuid = builder.toString();
-                        newUUID = UUID.fromString(uuid.trim());
-                    } catch (IllegalArgumentException e) {
-                        newUUID = UUID.randomUUID();
-                        log.warn("Invalid UUID for " + current.get("input") + ". Program proceeding with newly generated UUID, but JSON file will still be incorrect!");
-                        try {
-                            FileWriter writer = new FileWriter("TestSuite.json");
-                            writer.write(current.toString());
-                            writer.close();
-                        } catch (IOException ex) {
-                            e.printStackTrace();
-                        }
+                        input = builder.toString();
+
+                        TestResult expected = TestResult.getTestResultFromString(expectedString);
+                        TestResult actual = TestResult.getTestResultFromString(actualString);
+                        TestCase currentCase = new TestCase(input, expected, actual);
+
+                        suite.add(currentCase);
                     }
-                    String input = current.get("input").toString();
-                    String expectedString = current.get("expectedResult").toString();
-                    String actualString = current.get("actualResult").toString();
 
-                    StringBuilder builder = new StringBuilder();
-                    for (int i = 0; i < input.length(); i++) {
-                        if (input.charAt(i) != '\"' && input.charAt(i) != '"') {
-                            builder.append(input.charAt(i));
-                        }
-                    }
-                    input = builder.toString();
-
-                    TestResult expected = TestResult.getTestResultFromString(expectedString);
-                    TestResult actual = TestResult.getTestResultFromString(actualString);
-                    TestCase currentCase = new TestCase(newUUID, input,  expected, actual);
-
-                    suite.add(currentCase);
+                    log.info("Successfully loaded " + keySet.size() + " TestCases into TestSuite.");
+                    suiteList.add(suite);
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
-                log.info("Successfully loaded " + keySet.size() + " TestCases into TestSuite.");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            suite = new TestSuite();
-            TestCase case1 = new TestCase(UUID.randomUUID(), "!ping", TestResult.PASS, TestResult.FAIL_UNEXPECTED_OUTPUT);
-            TestCase case2 = new TestCase(UUID.randomUUID(), "!help", TestResult.FAIL_UNEXPECTED_OUTPUT, TestResult.FAIL_OTHER);
-            suite.add(case1, case2);
-            JSONObject jo = suite.toJsonObject(); // Saving the suite to a JSONObject is easier than hardcoding the entire thing, so we can just load in changes instead of recompiling
-
-            try {
-                FileWriter writer = new FileWriter("TestSuite.json");
-                writer.write(jo.toString());
-                writer.close();
-            } catch (IOException e) {
-                e.printStackTrace();
             }
         }
+        log.info("Successfully loaded " + suiteList.size() + " TestSuites.");
     }
 
     /**
@@ -133,9 +107,12 @@ public class Runner {
             if (!testSuiteFile.exists()) {
                 testSuiteFile.createNewFile();
             }
-            JSONObject json = suite.toJsonObject();
             FileWriter writer = new FileWriter(testSuiteFile);
-            writer.write(json.toString());
+            for (TestSuite suite : suiteList) {
+                JSONObject json = suite.toJsonObject();
+
+                writer.write(json.toString());
+            }
             writer.close();
 
         } catch (IOException e) {
@@ -147,15 +124,15 @@ public class Runner {
     private static void createAndFillCommandsList() {
         commandsList = new ArrayList();
         commandsList.add(new RunAllTestsCommand());
-
+        commandsList.add(new ShutdownCommand());
     }
 
     public static List<Command> getCommandsList() {
         return commandsList;
     }
 
-    public static TestSuite getTestSuite() {
-        return suite;
+    public static List<TestSuite> getTestSuiteList() {
+        return suiteList;
     }
 
     public static JDA getApi() {
@@ -182,6 +159,9 @@ public class Runner {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+
+
         loadJsonTestSuite();
         createAndFillCommandsList();
     }
