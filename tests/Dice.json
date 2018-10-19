@@ -1,0 +1,8 @@
+{
+	"GeneralDiceRoll": {
+		"input":"!dice 3d8",
+		"output":"",
+		"expectedResult":"PASS",	
+		"actualResult":"PASS"
+	}
+}

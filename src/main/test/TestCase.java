@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class TestCase {
+    private String caseName;
     private String input;
     private String output;
     private TestResult expectedResult;
@@ -29,8 +30,10 @@ public class TestCase {
      * @param expected The expected result of the TestCase
      * @param actual The actual result of the TestCase
      */
-    public TestCase(String command, TestResult expected, TestResult actual) {
+    public TestCase(String title, String command, String output, TestResult expected, TestResult actual) {
+        caseName = title;
         input = command;
+        this.output = output;
         expectedResult = expected;
         actualResult = actual;
     }

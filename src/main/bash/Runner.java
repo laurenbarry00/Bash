@@ -24,7 +24,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.UUID;
 
 public class Runner {
     static final Logger log = LoggerFactory.getLogger(Runner.class);
@@ -70,6 +69,7 @@ public class Runner {
                     for (String key : keySet) {
                         JsonObject current = obj.getAsJsonObject(key);
                         String input = current.get("input").toString();
+                        String output = current.get("output").toString();
                         String expectedString = current.get("expectedResult").toString();
                         String actualString = current.get("actualResult").toString();
 
@@ -83,7 +83,7 @@ public class Runner {
 
                         TestResult expected = TestResult.getTestResultFromString(expectedString);
                         TestResult actual = TestResult.getTestResultFromString(actualString);
-                        TestCase currentCase = new TestCase(input, expected, actual);
+                        TestCase currentCase = new TestCase(key, input, output, expected, actual);
 
                         suite.add(currentCase);
                     }
@@ -96,29 +96,6 @@ public class Runner {
             }
         }
         log.info("Successfully loaded " + suiteList.size() + " TestSuites.");
-    }
-
-    /**
-     * Saves the current TestSuite to JSON.
-     */
-    public static void saveJsonTestSuite() {
-        try {
-            File testSuiteFile = new File("TestSuite.json");
-            if (!testSuiteFile.exists()) {
-                testSuiteFile.createNewFile();
-            }
-            FileWriter writer = new FileWriter(testSuiteFile);
-            for (TestSuite suite : suiteList) {
-                JSONObject json = suite.toJsonObject();
-
-                writer.write(json.toString());
-            }
-            writer.close();
-
-        } catch (IOException e) {
-            log.error("Could not save TestSuite to JSON file!");
-            e.printStackTrace();
-        }
     }
 
     private static void createAndFillCommandsList() {

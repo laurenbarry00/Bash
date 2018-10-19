@@ -1,21 +1,21 @@
 package bash;
 
-import com.google.gson.Gson;
 import commands.Command;
+import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.OnlineStatus;
 import net.dv8tion.jda.core.entities.Message;
+import net.dv8tion.jda.core.entities.MessageHistory;
+import net.dv8tion.jda.core.entities.TextChannel;
 import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.DisconnectEvent;
 import net.dv8tion.jda.core.events.ReadyEvent;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 import net.dv8tion.jda.core.hooks.SubscribeEvent;
-import org.json.JSONObject;
+import test.TestCase;
+import test.TestResult;
 import test.TestSuite;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -38,22 +38,24 @@ public class EventHandler extends ListenerAdapter {
         User author = event.getAuthor();
         Message message = event.getMessage();
         if (author.isBot()) {
-            try {
-                File testSuiteFile = new File("message_log.json");
-                if (!testSuiteFile.exists()) {
-                    testSuiteFile.createNewFile();
+            JDA jda = Runner.getApi();
+            TextChannel channel = jda.getTextChannelById(492774370125545472L);
+            MessageHistory mh = channel.getHistory();
+            List<Message> messageList = mh.getRetrievedHistory();
+            for (TestSuite suite : Runner.getTestSuiteList()) {
+                for (int i = 0; i < suite.size(); i++) {
+                    TestCase testCase = suite.get(i);
+                    for (Message m : messageList) {
+                        if (m.getContentDisplay().equalsIgnoreCase(testCase.getInput())) {
+                            for (int j = 0; j < messageList.size(); j++) {
+                                if (m.getContentDisplay().matches(testCase.getOutput())) {
+                                    testCase.setExpectedResult(TestResult.PASS);
+                                }
+                            }
+                        }
+                    }
                 }
-                FileWriter writer = new FileWriter(testSuiteFile);
-                if (message.getEmbeds() != null) {
-                    JSONObject jo = message.getEmbeds().get(0).toJSONObject();
-                    writer.append(jo.toString());
-                } else {
-                    writer.append(message.getContentRaw());
-                }
-                writer.flush();
-            } catch (IOException e) {
-                Runner.getLogger().error("Could not save message " + message.getContentDisplay() + " to JSON file!");
-                e.printStackTrace();
+                suite.evaluateTests();
             }
         } else { // User is human, who presumably wants to use commands to control Bash.
              List<Command> commandsList = Runner.getCommandsList();
@@ -75,7 +77,6 @@ public class EventHandler extends ListenerAdapter {
     @Override
     @SubscribeEvent
     public void onDisconnect(DisconnectEvent event) {
-        Runner.saveJsonTestSuite();
         Runner.getApi().getPresence().setPresence(OnlineStatus.OFFLINE, false);
     }
 }

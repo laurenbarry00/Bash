@@ -1,51 +1,61 @@
 {
 	"MultiplicationTest": {
-			"input":"!calc 4*4",
-			"expectedResult":"PASS",
-			"actualResult":"PASS"
+		"input":"!calc 4*4",
+		"output":"\b16\b",
+		"expectedResult":"PASS",	
+		"actualResult":"PASS"
 	},
 	"AdditionTest": {
 		"input":"!calc 5+6",
+		"output":"\b11\b",
 		"expectedResult":"PASS",
 		"actualResult":"PASS"
 	},
 	"DivisonTest": {
 		"input":"!calc 4/2",
+		"output":"\b2\b",
 		"expectedResult":"PASS",
 		"actualResult":"PASS"
 	},
 	"SubtractionTest": {
 		"input":"!calc 8-3",
+		"output":"\b5\b",
 		"expectedResult":"PASS",
 		"actualResult":"PASS"
 	},
 	"NegativeAdditionTest": {
 		"input":"!calc -5+6",
+		"output":"\b1\b",
 		"expectedResult":"PASS",
 		"actualResult":"PASS"
 	},
 	"NegativeDivisonTest": {
 		"input":"!calc -9/3",
+		"output":"\b-3\b",
 		"expectedResult":"PASS",
 		"actualResult":"PASS"
 	},
 	"NegativeSubtractionTest": {
 		"input":"!calc -9-3",
+		"output":"\b-12\b",
 		"expectedResult":"PASS",
 		"actualResult":"PASS"
 	},
 	"NegativeMultiplicationTest": {
 		"input":"!calc -5*-6",
+		"output":"\b30\b",
 		"expectedResult":"PASS",
 		"actualResult":"PASS"
 	},
 	"ZeroMultiplicationTest": {
 		"input":"!calc 0*3",
+		"output":"\b0\b",
 		"expectedResult":"PASS",
 		"actualResult":"PASS"
 	},
 	"DivideByZeroTest":{
 		"input":"!calc 6/0",
+		"output":"\bDivision by zero\b",
 		"expectedResult":"FAIL_OTHER",
 		"actualResult":"FAIL_OTHER"
 	}

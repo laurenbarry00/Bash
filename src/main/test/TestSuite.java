@@ -1,5 +1,6 @@
 package test;
 
+import bash.Runner;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.entities.TextChannel;
@@ -10,19 +11,21 @@ import java.awt.*;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class TestSuite {
     private ArrayList<TestCase> cases;
+    ArrayList<TestCase> passed;
+    ArrayList<TestCase> failed;
 
     /**
      * Default constructor that initializes a new TestSuite object. Initial capacity is 10.
      */
     public TestSuite() {
         this.cases = new ArrayList<>(10);
+        passed = new ArrayList<>();
+        failed = new ArrayList<>();
     }
 
     /**
@@ -33,6 +36,8 @@ public class TestSuite {
         for (TestCase current : c) {
             cases.add(current);
         }
+        passed = new ArrayList<>();
+        failed = new ArrayList<>();
     }
 
     /**
@@ -124,26 +129,40 @@ public class TestSuite {
                 TimeUnit.SECONDS.sleep(3); // for rate limiting
                 testsRan += current.execute(api);
 
-                try {
-                    FileReader reader = new FileReader(new File("message_log.json"));
 
-                } catch (IOException e) {
-                    log.error("Could not read message from message log file!");
-                    log.error(e.getMessage());
-                }
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
-            EmbedBuilder builder = new EmbedBuilder();
-            builder.setTitle("Test Report");
-            builder.addField("Tests Ran:", String.valueOf(testsRan), false);
-            builder.setColor(new Color(43, 104, 174));
-
-            List<TextChannel> channels = api.getTextChannelsByName("testing", true);
-            channels.get(0).sendMessage(builder.build()).queue();
-            log.info("Successfully ran " + testsRan + "  out of " + cases.size() + " test cases in suite."); // Log the number of tests run
+            log.info("Ran " + testsRan + " out of " + size() + " tests.");
         }
+    }
+
+    public void evaluateTests() {
+        for (TestCase testCase : cases) {
+            if (testCase.getExpectedResult() == TestResult.PASS) {
+                passed.add(testCase);
+            } else {
+                failed.add(testCase);
+            }
+        }
+    }
+
+    private void printTestResults() {
+        EmbedBuilder builder = new EmbedBuilder();
+        builder.setColor(new Color(43, 104, 174));
+        builder.setTitle("Test Suite Report");
+        builder.addField("Passed: ", passed.toString(), false);
+        for (TestCase testCase : failed) {
+            builder.addField("Failed: ", testCase.getInput(), false);
+        }
+        TextChannel channel = Runner.getApi().getTextChannelById(492774370125545472L);
+        channel.sendMessage(builder.build()).queue();
+    }
+
+    public void printReport() {
+        evaluateTests();
+        printTestResults();
     }
 
     /**
