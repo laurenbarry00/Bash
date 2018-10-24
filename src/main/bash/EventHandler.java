@@ -37,25 +37,29 @@ public class EventHandler extends ListenerAdapter {
     public void onMessageReceived(MessageReceivedEvent event) {
         User author = event.getAuthor();
         Message message = event.getMessage();
-        if (author.isBot()) {
-            JDA jda = Runner.getApi();
-            TextChannel channel = jda.getTextChannelById(492774370125545472L);
-            MessageHistory mh = channel.getHistory();
-            List<Message> messageList = mh.getRetrievedHistory();
-            for (TestSuite suite : Runner.getTestSuiteList()) {
-                for (int i = 0; i < suite.size(); i++) {
+
+        if (author.getName().equalsIgnoreCase("AvaIre")) { // Potential test result response
+            for (int i = 0; i < Runner.getTestSuiteList().size(); i++) {
+                TestSuite suite = Runner.getTestSuiteList().get(i);
+                for (int j = 0; j < suite.size(); j++) {
                     TestCase testCase = suite.get(i);
-                    for (Message m : messageList) {
-                        if (m.getContentDisplay().equalsIgnoreCase(testCase.getInput())) {
-                            for (int j = 0; j < messageList.size(); j++) {
-                                if (m.getContentDisplay().matches(testCase.getOutput())) {
-                                    testCase.setExpectedResult(TestResult.PASS);
-                                }
-                            }
+                    String regexPattern = testCase.getOutput();
+
+                    if (message.getEmbeds().size() > 0) {
+                        String embedDescription = message.getEmbeds().get(0).getDescription();
+                        if (embedDescription.matches(regexPattern)) {
+                            testCase.setActualResult(TestResult.PASS);
+                        } else {
+                            testCase.setActualResult(TestResult.FAIL_UNEXPECTED_OUTPUT);
+                        }
+                    } else {
+                        if (message.getContentDisplay().matches(regexPattern)) {
+                            testCase.setActualResult(TestResult.PASS);
+                        } else {
+                            testCase.setActualResult(TestResult.FAIL_UNEXPECTED_OUTPUT);
                         }
                     }
                 }
-                suite.evaluateTests();
             }
         } else { // User is human, who presumably wants to use commands to control Bash.
              List<Command> commandsList = Runner.getCommandsList();

@@ -88,7 +88,7 @@ public class Runner {
                         suite.add(currentCase);
                     }
 
-                    log.info("Successfully loaded " + keySet.size() + " TestCases into TestSuite.");
+                    log.info("Successfully loaded " + keySet.size() + " TestCases into TestSuite. (From file " + testSuite.getName() + ")");
                     suiteList.add(suite);
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -136,7 +136,6 @@ public class Runner {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
 
 
         loadJsonTestSuite();

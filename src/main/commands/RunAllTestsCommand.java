@@ -2,6 +2,7 @@ package commands;
 
 
 import bash.Runner;
+import net.dv8tion.jda.core.entities.TextChannel;
 import test.TestSuite;
 
 import java.util.List;
@@ -44,6 +45,7 @@ public class RunAllTestsCommand implements Command {
         List<TestSuite> list = Runner.getTestSuiteList();
         for (TestSuite suite : list) {
             suite.runAllTests(Runner.getApi(), Runner.getLogger());
+            suite.printReport();
         }
     }
 }

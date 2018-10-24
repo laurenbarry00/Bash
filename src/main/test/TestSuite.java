@@ -152,7 +152,9 @@ public class TestSuite {
         EmbedBuilder builder = new EmbedBuilder();
         builder.setColor(new Color(43, 104, 174));
         builder.setTitle("Test Suite Report");
-        builder.addField("Passed: ", passed.toString(), false);
+
+        builder.addField("Passed: ", passed.size() + "/" + size(), false);
+
         for (TestCase testCase : failed) {
             builder.addField("Failed: ", testCase.getInput(), false);
         }
