@@ -53,10 +53,46 @@
 		"expectedResult":"PASS",
 		"actualResult":"PASS"
 	},
-	"DivideByZeroTest":{
-		"input":"!calc 6/0",
-		"output":"\bDivision by zero\b",
-		"expectedResult":"FAIL_OTHER",
-		"actualResult":"FAIL_OTHER"
+	"ExponentTest":{
+		"input":"!calc 3^2",
+		"output":"\b9\b",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"FactorialTest":{
+		"input":"!calc 5!",
+		"output":"^(Unknown operator `!` at position)\\s\\d",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"OrderOfOperationsTest":{
+		"input":"!calc (7)(4+3)",
+		"output":"\b49\b",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"FactorialWithExponentTest":{
+		"input":"!calc (2^3)!",
+		"output":"^(Unknown operator `!` at position)\\s\\d",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"PerfectSquareRootTest":{
+		"input":"!calc 4^(1/2)",
+		"output":"\b2\b",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"NegativeSquareRootTest":{
+		"input":"!calc (-9)^(1/2)",
+		"output":"\bInfinite or NaN\b",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"": {
+		"input":"!calc 5-4*8",
+		"output":"\b-27\b",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
 	}
 }

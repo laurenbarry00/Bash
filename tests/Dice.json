@@ -1,8 +1,136 @@
 {
 	"GeneralDiceRoll": {
 		"input":"!dice 3d8",
-		"output":"",
+		"output":"(@)((?:[a-z][a-z]+))(\\s+)(\\d+)(D)(\\d+)(\\s+)(resulted)(\\s+)(in)(\\s+)(\\d+)(\\s+)(\\(.*\\))",
 		"expectedResult":"PASS",	
+		"actualResult":"PASS"
+	},
+	
+	"MinNumDiceInside": {
+		"input":"!dice 1d4",
+		"output":"(@)((?:[a-z][a-z]+))(\\s+)(\\d+)(D)(\\d+)(\\s+)(resulted)(\\s+)(in)(\\s+)(\\d+)(\\s+)(\\(.*\\))",
+		"expectedResult":"",
+		"actualResult":""
+	},
+	
+	"MinNumDiceEdge": {
+		"input":"!dice 0d4",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"MaxNumDiceInside": {
+		"input":"!dice 2147483647d4",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"MaxNumDiceEdge": {
+		"input":"!dice 2147483648d4",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"MinNumSidesInside": {
+		"input":"!dice 2d1",
+		"output":"(@)((?:[a-z][a-z]+))(\\s+)(\\d+)(D)(\\d+)(\\s+)(resulted)(\\s+)(in)(\\s+)(\\d+)(\\s+)(\\(.*\\))",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"MinNumSidesEdge": {
+		"input":"!dice 2d0",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"MaxNumSidesInside": {
+		"input":"!dice 2d2147483647",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"MaxNumSidesEdge": {
+		"input":"!dice 3d2147483647",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"StringIllegalParamter": {
+		"input":"!dice 5df",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"RobustMaxNumSides": {
+		"input":"!dice 3d2147483649",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"RobustMinNumSides": {
+		"input":"!dice 3d-1",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"RobustMaxNumDice": {
+		"input":"!dice 2147483649d4",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"RobustMinNumDice": {
+		"input":"!dice -1d3",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"WorstMinDiceMinSidesEdge": {
+		"input":"!dice 0d0",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"WorstMinDiceMinSidesOutside": {
+		"input":"!dice -1d-1",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"WorstMaxDiceMaxSidesEdge": {
+		"input":"!dice 2147483648d2147483648",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"WorstMaxDiceMaxSidesOutside": {
+		"input":"!dice 2147483649d2147483649",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"WorstMaxDiceMinSidesEdge": {
+		"input":"!dice 2147483648d0",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"WorstMaxDiceMinSidesOutisde": {
+		"input":"!dice 2147483649d-1",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"WorstMinDiceMaxSidesEdge": {
+		"input":"!dice 0d2147483648",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"WorstMinDiceMaxSidesOutside": {
+		"input":"!dice 2147483647d2147483649",
+		"output":"^(`\\d+d\\d+`\\sis\\snot\\sa\\svalid\\sdice\\sformat)(,)[a-zA-Z0-9_ ]*$",
+		"expectedResult":"PASS",
 		"actualResult":"PASS"
 	}
 }
