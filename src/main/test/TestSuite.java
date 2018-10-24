@@ -8,9 +8,6 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 
 import java.awt.*;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
