@@ -4,13 +4,16 @@ import bash.Runner;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.entities.Message;
+import net.dv8tion.jda.core.entities.MessageEmbed;
 import net.dv8tion.jda.core.entities.TextChannel;
 import net.dv8tion.jda.core.requests.restaction.pagination.MessagePaginationAction;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 
 import java.awt.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class TestSuite {
@@ -160,9 +163,22 @@ public class TestSuite {
         MessagePaginationAction history = channel.getIterableHistory();
         int deletedMessages = 0;
         for (Message m : history) {
-            if (m.getAuthor().isBot()) {
+            if (m.getAuthor().getName().equalsIgnoreCase("AvaIre")) {
                 m.delete().queue();
                 deletedMessages++;
+            } else if (m.getAuthor().getName().equalsIgnoreCase("Bash")) {
+                if (m.getEmbeds().size() > 0) {
+                    if (m.getEmbeds().get(0).getFooter() != null) {
+                        MessageEmbed.Footer foot = m.getEmbeds().get(0).getFooter();
+                        if (!foot.getText().equalsIgnoreCase("Bash Test Report")) {
+                            m.delete().queue();
+                            deletedMessages++;
+                        }
+                    }
+                } else {
+                    m.delete().queue();
+                    deletedMessages++;
+                }
             }
         }
         log.info("Purged " + deletedMessages + " messages after running tests.");
@@ -190,8 +206,11 @@ public class TestSuite {
         builder.setTitle(name + " Test Report");
         builder.setFooter("Bash Test Report", "https://us.123rf.com/450wm/alonastep/alonastep1610/alonastep161000879/66216004-tick-sign-element-green-checkmark-icon-isolated-on-white-background-simple-mark-graphic-design-ok-bu.jpg?ver=6");
 
-        builder.addField("Passed: ", passed.size() + "/" + size(), false);
+        Date timestamp = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        builder.addField("Timestamp", sdf.format(timestamp), false);
 
+        builder.addField("Passed: ", passed.size() + "/" + size(), false);
         for (TestCase testCase : failed) {
             builder.addField("Failed: ", testCase.getInput(), false);
         }

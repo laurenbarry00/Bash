@@ -5,9 +5,7 @@ package bash; /**
 
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
-import commands.Command;
-import commands.RunAllTestsCommand;
-import commands.ShutdownCommand;
+import commands.*;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
@@ -95,7 +93,7 @@ public class Runner {
                             prefixIndex = i;
                             for (int j = 0; j < commandString.length(); j++) {
                                 if (commandString.charAt(j) == ' ') {
-                                    endCommandIndex = j - 1;
+                                    endCommandIndex = j;
                                 }
                             }
                         }
@@ -117,6 +115,8 @@ public class Runner {
         commandsList = new ArrayList();
         commandsList.add(new RunAllTestsCommand());
         commandsList.add(new ShutdownCommand());
+        commandsList.add(new PurgeCommand());
+        commandsList.add(new ListAllTestsCommand());
     }
 
     public static List<Command> getCommandsList() {

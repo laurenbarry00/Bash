@@ -4,17 +4,14 @@
     <option name="ANALYZE_TEST_SOURCES" value="false" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/test/TestSuite.java" line="156" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/test/TestSuite.java" line="159" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a228221-0203-4fd9-a70e-e26ecd2a5895" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/commands/ListAllTestsCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/bash/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bash/EventHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/bash/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bash/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/test/TestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/TestSuite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Calc.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Calc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Dice.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Dice.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/BashBot/target/" />
@@ -61,7 +58,7 @@
         <counts>
           <entry key="class" value="57" />
           <entry key="iml" value="1" />
-          <entry key="java" value="61" />
+          <entry key="java" value="63" />
           <entry key="json" value="18" />
           <entry key="md" value="1" />
           <entry key="ser" value="1" />
@@ -73,7 +70,7 @@
         <counts>
           <entry key="CLASS" value="57" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="61" />
+          <entry key="JAVA" value="63" />
           <entry key="JSON" value="18" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="XML" value="10" />
@@ -81,8 +78,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="12" />
-          <entry key="java" value="46801" />
+          <entry key="dummy" value="31" />
+          <entry key="java" value="48448" />
           <entry key="json" value="182" />
           <entry key="md" value="93" />
           <entry key="xml" value="61" />
@@ -90,9 +87,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="46801" />
+          <entry key="JAVA" value="48448" />
           <entry key="JSON" value="182" />
-          <entry key="PLAIN_TEXT" value="105" />
+          <entry key="PLAIN_TEXT" value="124" />
           <entry key="XML" value="61" />
         </counts>
       </usages-collector>
@@ -122,14 +119,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/bash/Runner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="107" column="41" lean-forward="true" selection-start-line="107" selection-start-column="41" selection-end-line="107" selection-end-column="41" />
+            <state relative-caret-position="286">
+              <caret line="119" column="5" lean-forward="true" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#loadToken#0;class#Runner#0" />
                 <element signature="method#loadToken#0;class#Runner#0" />
                 <element signature="docComment;method#loadJsonTestSuite#0;class#Runner#0" />
-                <element signature="method#createAndFillCommandsList#0;class#Runner#0" />
+                <element signature="method#loadJsonTestSuite#0;class#Runner#0" />
               </folding>
             </state>
           </provider>
@@ -138,8 +135,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/test/TestCase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
+            <state relative-caret-position="102">
+              <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
               <folding>
                 <element signature="docComment;method#TestCase#0;class#TestCase#0" />
                 <element signature="method#TestCase#0;class#TestCase#0" />
@@ -165,8 +162,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/test/TestSuite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="165" column="13" lean-forward="true" selection-start-line="165" selection-start-column="13" selection-end-line="165" selection-end-column="13" />
+            <state relative-caret-position="1887">
+              <caret line="207" lean-forward="true" selection-start-line="207" selection-end-line="207" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#TestSuite#0;class#TestSuite#0" />
@@ -189,7 +186,6 @@
                 <element signature="docComment;method#evaluateTests#0;class#TestSuite#0" />
                 <element signature="method#evaluateTests#0;class#TestSuite#0" />
                 <element signature="docComment;method#printTestResults#0;class#TestSuite#0" />
-                <element signature="method#printTestResults#0;class#TestSuite#0" />
                 <element signature="docComment;method#printReport#0;class#TestSuite#0" />
                 <element signature="docComment;method#toJsonObject#0;class#TestSuite#0" />
                 <element signature="method#toJsonObject#0;class#TestSuite#0" />
@@ -198,11 +194,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/commands/PurgeCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+            <state relative-caret-position="281">
+              <caret line="39" column="86" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="86" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#getInput#0;class#PurgeCommand#0" />
@@ -213,17 +209,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/commands/RunAllTestsCommand.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/commands/ListAllTestsCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="38" column="5" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
+            <state relative-caret-position="417">
+              <caret line="34" column="58" lean-forward="true" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="docComment;method#getInput#0;class#RunAllTestsCommand#0" />
-                <element signature="docComment;method#getRegexInput#0;class#RunAllTestsCommand#0" />
-                <element signature="docComment;method#getRegexOutput#0;class#RunAllTestsCommand#0" />
-                <element signature="docComment;method#execute#0;class#RunAllTestsCommand#0" />
               </folding>
             </state>
           </provider>
@@ -232,21 +224,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/commands/Command.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/bash/EventHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="67" column="39" lean-forward="true" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;method#onDisconnect#0;class#EventHandler#0" />
-              </folding>
+            <state relative-caret-position="51">
+              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="9" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -301,10 +280,12 @@
         <option value="$PROJECT_DIR$/src/main/test/TestCase.java" />
         <option value="$PROJECT_DIR$/src/main/commands/RunAllTestsCommand.java" />
         <option value="$PROJECT_DIR$/src/main/bash/EventHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/bash/Runner.java" />
         <option value="$PROJECT_DIR$/src/main/commands/Command.java" />
-        <option value="$PROJECT_DIR$/src/main/test/TestSuite.java" />
         <option value="$PROJECT_DIR$/src/main/commands/PurgeCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/test/TestSuite.java" />
+        <option value="$PROJECT_DIR$/src/main/commands/ListTestsCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/bash/Runner.java" />
+        <option value="$PROJECT_DIR$/src/main/commands/ListAllTestsCommand.java" />
       </list>
     </option>
   </component>
@@ -385,7 +366,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/flame/Coding/Bash/src/main/EventHandler.java" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540585928603" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540589845829" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../1A Libraries/selenium-java" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -460,7 +441,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17750533" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17750533" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -470,7 +451,7 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.3286334" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.34815618" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.34815618" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.36334056" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -534,9 +515,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -766,23 +744,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/bash/Runner.java">
+    <entry file="file://$PROJECT_DIR$/src/main/commands/RunAllTestsCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="107" column="41" lean-forward="true" selection-start-line="107" selection-start-column="41" selection-end-line="107" selection-end-column="41" />
+        <state relative-caret-position="287">
+          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#loadToken#0;class#Runner#0" />
-            <element signature="method#loadToken#0;class#Runner#0" />
-            <element signature="docComment;method#loadJsonTestSuite#0;class#Runner#0" />
-            <element signature="method#createAndFillCommandsList#0;class#Runner#0" />
+            <element signature="docComment;method#getInput#0;class#RunAllTestsCommand#0" />
+            <element signature="docComment;method#getRegexInput#0;class#RunAllTestsCommand#0" />
+            <element signature="docComment;method#getRegexOutput#0;class#RunAllTestsCommand#0" />
+            <element signature="docComment;method#execute#0;class#RunAllTestsCommand#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/bash/EventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
+        <state relative-caret-position="230">
           <caret line="67" column="39" lean-forward="true" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -791,10 +769,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/commands/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/bash/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="119" column="5" lean-forward="true" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#loadToken#0;class#Runner#0" />
+            <element signature="method#loadToken#0;class#Runner#0" />
+            <element signature="docComment;method#loadJsonTestSuite#0;class#Runner#0" />
+            <element signature="method#loadJsonTestSuite#0;class#Runner#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/commands/PurgeCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="39" column="86" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#getInput#0;class#PurgeCommand#0" />
+            <element signature="docComment;method#getRegexInput#0;class#PurgeCommand#0" />
+            <element signature="docComment;method#getRegexOutput#0;class#PurgeCommand#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test/TestCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
+        <state relative-caret-position="102">
+          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
           <folding>
             <element signature="docComment;method#TestCase#0;class#TestCase#0" />
             <element signature="method#TestCase#0;class#TestCase#0" />
@@ -816,31 +828,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/commands/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/commands/RunAllTestsCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="38" column="5" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#getInput#0;class#RunAllTestsCommand#0" />
-            <element signature="docComment;method#getRegexInput#0;class#RunAllTestsCommand#0" />
-            <element signature="docComment;method#getRegexOutput#0;class#RunAllTestsCommand#0" />
-            <element signature="docComment;method#execute#0;class#RunAllTestsCommand#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test/TestSuite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="165" column="13" lean-forward="true" selection-start-line="165" selection-start-column="13" selection-end-line="165" selection-end-column="13" />
+        <state relative-caret-position="1887">
+          <caret line="207" lean-forward="true" selection-start-line="207" selection-end-line="207" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#TestSuite#0;class#TestSuite#0" />
@@ -863,7 +854,6 @@
             <element signature="docComment;method#evaluateTests#0;class#TestSuite#0" />
             <element signature="method#evaluateTests#0;class#TestSuite#0" />
             <element signature="docComment;method#printTestResults#0;class#TestSuite#0" />
-            <element signature="method#printTestResults#0;class#TestSuite#0" />
             <element signature="docComment;method#printReport#0;class#TestSuite#0" />
             <element signature="docComment;method#toJsonObject#0;class#TestSuite#0" />
             <element signature="method#toJsonObject#0;class#TestSuite#0" />
@@ -871,15 +861,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/commands/PurgeCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/commands/ListAllTestsCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+        <state relative-caret-position="417">
+          <caret line="34" column="58" lean-forward="true" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#getInput#0;class#PurgeCommand#0" />
-            <element signature="docComment;method#getRegexInput#0;class#PurgeCommand#0" />
-            <element signature="docComment;method#getRegexOutput#0;class#PurgeCommand#0" />
           </folding>
         </state>
       </provider>
