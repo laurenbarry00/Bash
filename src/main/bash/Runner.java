@@ -88,6 +88,21 @@ public class Runner {
                         suite.add(currentCase);
                     }
 
+                    String commandString = suite.get(0).getInput();
+                    int prefixIndex = 0, endCommandIndex = 0;
+                    for (int i = 0; i < commandString.length(); i++) {
+                        if (commandString.charAt(i) == '!') {
+                            prefixIndex = i;
+                            for (int j = 0; j < commandString.length(); j++) {
+                                if (commandString.charAt(j) == ' ') {
+                                    endCommandIndex = j - 1;
+                                }
+                            }
+                        }
+                    }
+                    String name = commandString.substring(prefixIndex, endCommandIndex);
+                    suite.setName(name);
+
                     log.info("Successfully loaded " + keySet.size() + " TestCases into TestSuite. (From file " + testSuite.getName() + ")");
                     suiteList.add(suite);
                 } catch (IOException e) {

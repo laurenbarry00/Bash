@@ -1,11 +1,8 @@
 package bash;
 
 import commands.Command;
-import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.OnlineStatus;
 import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.entities.MessageHistory;
-import net.dv8tion.jda.core.entities.TextChannel;
 import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.DisconnectEvent;
 import net.dv8tion.jda.core.events.ReadyEvent;
@@ -67,6 +64,7 @@ public class EventHandler extends ListenerAdapter {
                  Command current = commandsList.get(i);
 
                  if (message.getContentDisplay().matches(current.getRegexInput())) {
+                     Runner.getLogger().info(current.getInput() + " executed by " + author.getName() + "#" + author.getDiscriminator());
                      current.execute();
                      break;
                  }

@@ -3,7 +3,9 @@ package test;
 import bash.Runner;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.JDA;
+import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.TextChannel;
+import net.dv8tion.jda.core.requests.restaction.pagination.MessagePaginationAction;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 
@@ -12,6 +14,7 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class TestSuite {
+    private String name;
     private ArrayList<TestCase> cases;
     ArrayList<TestCase> passed;
     ArrayList<TestCase> failed;
@@ -99,6 +102,22 @@ public class TestSuite {
     }
 
     /**
+     * Sets the Test Suite's name (the name of the command being tested)
+     * @param name Suite name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * Retrieves the name of the Test Suite
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
      * Searches for a given TestCase and returns the index of its location.
      * @param target The TestCase that is being searched for.
      * @return The index at which the target TestCase is found. Returns -1 if not found.
@@ -133,9 +152,26 @@ public class TestSuite {
         } finally {
             log.info("Ran " + testsRan + " out of " + size() + " tests.");
         }
+
+        TextChannel channel = Runner.getApi().getTextChannelById(492774370125545472L);
+        channel.sendMessage("Ran " + testsRan + " out of " + size() + " tests.").queue();
+
+        // Clearing out spam!
+        MessagePaginationAction history = channel.getIterableHistory();
+        int deletedMessages = 0;
+        for (Message m : history) {
+            if (m.getAuthor().isBot()) {
+                m.delete().queue();
+                deletedMessages++;
+            }
+        }
+        log.info("Purged " + deletedMessages + " messages after running tests.");
     }
 
-    public void evaluateTests() {
+    /**
+     * Evaluates whether or not each test passed or failed.
+     */
+    private void evaluateTests() {
         for (TestCase testCase : cases) {
             if (testCase.getExpectedResult() == TestResult.PASS) {
                 passed.add(testCase);
@@ -145,20 +181,27 @@ public class TestSuite {
         }
     }
 
+    /**
+     * Formats the test results in an Embed and prints to the text channel.
+     */
     private void printTestResults() {
         EmbedBuilder builder = new EmbedBuilder();
         builder.setColor(new Color(43, 104, 174));
-        builder.setTitle("Test Suite Report");
+        builder.setTitle(name + " Test Report");
+        builder.setFooter("Bash Test Report", "https://us.123rf.com/450wm/alonastep/alonastep1610/alonastep161000879/66216004-tick-sign-element-green-checkmark-icon-isolated-on-white-background-simple-mark-graphic-design-ok-bu.jpg?ver=6");
 
         builder.addField("Passed: ", passed.size() + "/" + size(), false);
 
         for (TestCase testCase : failed) {
             builder.addField("Failed: ", testCase.getInput(), false);
         }
-        TextChannel channel = Runner.getApi().getTextChannelById(492774370125545472L);
+        TextChannel channel = Runner.getApi().getTextChannelById(492774370125545472L); // #testing channel.
         channel.sendMessage(builder.build()).queue();
     }
 
+    /**
+     * Evaluates the test results and prints to the text channel.
+     */
     public void printReport() {
         evaluateTests();
         printTestResults();
