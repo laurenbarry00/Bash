@@ -1,7 +1,6 @@
 package commands;
 
 public interface Command {
-
     String getInput();
 
     String getRegexInput();
