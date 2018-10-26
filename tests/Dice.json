@@ -9,8 +9,8 @@
 	"MinNumDiceInside": {
 		"input":"!dice 1d4",
 		"output":"(@)((?:[a-z][a-z]+))(\\s+)(\\d+)(D)(\\d+)(\\s+)(resulted)(\\s+)(in)(\\s+)(\\d+)(\\s+)(\\(.*\\))",
-		"expectedResult":"",
-		"actualResult":""
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
 	},
 	
 	"MinNumDiceEdge": {

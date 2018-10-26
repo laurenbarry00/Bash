@@ -89,9 +89,15 @@
 		"expectedResult":"PASS",
 		"actualResult":"PASS"
 	},
-	"": {
+	"LongMathExpressionTest": {
 		"input":"!calc 5-4*8",
 		"output":"\b-27\b",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"LongMathExpressionTest2": {
+		"input":"!calc 2*6-4/2",
+		"output": "\b10\b",
 		"expectedResult":"PASS",
 		"actualResult":"PASS"
 	}
