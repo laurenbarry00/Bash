@@ -1,4 +1,5 @@
 # Bash
+*A Discord bot to test a Discord bot!*
 Developed By: Lauren Barry
 
 ## Description
