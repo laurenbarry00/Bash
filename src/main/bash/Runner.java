@@ -10,7 +10,6 @@ import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.OnlineStatus;
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import test.TestCase;
@@ -111,26 +110,46 @@ public class Runner {
         log.info("Successfully loaded " + suiteList.size() + " TestSuites.");
     }
 
+    /**
+     * Creates the list of commands to be accessed by EventHandler.onMessageReceived()
+     */
     private static void createAndFillCommandsList() {
         commandsList = new ArrayList();
         commandsList.add(new RunAllTestsCommand());
         commandsList.add(new ShutdownCommand());
         commandsList.add(new PurgeCommand());
         commandsList.add(new ListAllTestsCommand());
+        commandsList.add(new RunTestCommand());
     }
 
+    /**
+     * Retrieves the List of commands
+     * @return commandsList
+     */
     public static List<Command> getCommandsList() {
         return commandsList;
     }
 
+    /**
+     * Returns the list of loaded Test Suites
+     * @return suiteList
+     */
     public static List<TestSuite> getTestSuiteList() {
         return suiteList;
     }
 
+    /**
+     * Returns the JDA instance.
+     * @return api
+     */
     public static JDA getApi() {
         return api;
     }
 
+    /**
+     * Returns the Logger instance.
+     * @return log
+     */
     public static Logger getLogger() {
         return log;
     }

@@ -1,6 +1,7 @@
 package bash;
 
 import commands.Command;
+import commands.RunTestCommand;
 import net.dv8tion.jda.core.OnlineStatus;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.User;
@@ -15,6 +16,8 @@ import test.TestSuite;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class EventHandler extends ListenerAdapter {
 
@@ -29,6 +32,10 @@ public class EventHandler extends ListenerAdapter {
         Runner.log.info("Ping: " + event.getJDA().getPing() + " at " + LocalDateTime.now());
     }
 
+    /**
+     * EventHandler for messages received
+     * @param event MessageReceivedEvent
+     */
     @Override
     @SubscribeEvent
     public void onMessageReceived(MessageReceivedEvent event) {
