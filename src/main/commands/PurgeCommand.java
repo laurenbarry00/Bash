@@ -14,6 +14,7 @@ public class PurgeCommand implements Command {
      * Retrieves the Command input in its display format
      * @return Input as disaplyed normally
      */
+    @Override
     public String getInput() {
         return input;
     }
@@ -36,6 +37,9 @@ public class PurgeCommand implements Command {
         return regexOutput;
     }
 
+    /**
+     * Attempts to delete all messages in the channel.
+     */
     public void execute() {
         TextChannel channel = Runner.getApi().getTextChannelById(492774370125545472L);
         MessagePaginationAction history = channel.getIterableHistory();
