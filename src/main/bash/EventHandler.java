@@ -1,7 +1,6 @@
 package bash;
 
 import commands.Command;
-import commands.RunTestCommand;
 import net.dv8tion.jda.core.OnlineStatus;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.User;
@@ -16,8 +15,6 @@ import test.TestSuite;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class EventHandler extends ListenerAdapter {
 

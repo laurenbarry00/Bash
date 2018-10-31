@@ -19,8 +19,8 @@ import java.util.concurrent.TimeUnit;
 public class TestSuite {
     private String name;
     private ArrayList<TestCase> cases;
-    ArrayList<TestCase> passed;
-    ArrayList<TestCase> failed;
+    private ArrayList<TestCase> passed;
+    private ArrayList<TestCase> failed;
 
     /**
      * Default constructor that initializes a new TestSuite object. Initial capacity is 10.
@@ -160,6 +160,7 @@ public class TestSuite {
         channel.sendMessage("Ran " + testsRan + " out of " + size() + " tests.").queue();
 
         // Clearing out spam!
+        /*
         MessagePaginationAction history = channel.getIterableHistory();
         int deletedMessages = 0;
         for (Message m : history) {
@@ -182,6 +183,7 @@ public class TestSuite {
             }
         }
         log.info("Purged " + deletedMessages + " messages after running tests.");
+        */
     }
 
     /**
@@ -224,6 +226,9 @@ public class TestSuite {
     public void printReport() {
         evaluateTests();
         printTestResults();
+
+        passed.clear();
+        failed.clear();
     }
 
     /**

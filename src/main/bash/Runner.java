@@ -1,7 +1,4 @@
-package bash; /**
- * The bash class in which the bot in initialized.
- * @author Lauren Barry
- */
+package bash;
 
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
@@ -22,6 +19,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * The Bash class in which the bot in initialized.
+ * @author Lauren Barry
+ */
+
 public class Runner {
     static final Logger log = LoggerFactory.getLogger(Runner.class);
     private static List<Command> commandsList;
@@ -40,6 +42,7 @@ public class Runner {
             token = br.readLine(); // Can't hardcode the bot token due to security, so have to load it from a file
         } catch (IOException e) {
             System.err.println("Error loading token from file!\nAborting login.");
+            e.printStackTrace();
             System.exit(-1);
         }
     }
@@ -51,6 +54,7 @@ public class Runner {
         File folder = new File("C:\\Users\\flame\\Coding\\Bash\\tests");
         File[] fileList = folder.listFiles();
 
+        // Each TestSuite is stored in a JSON file
         for (File testSuite : fileList) {
             if (testSuite.exists() && testSuite.length() > 0) {
                 JsonParser jsonParser = new JsonParser();
@@ -85,20 +89,7 @@ public class Runner {
                         suite.add(currentCase);
                     }
 
-                    String commandString = suite.get(0).getInput();
-                    int prefixIndex = 0, endCommandIndex = 0;
-                    for (int i = 0; i < commandString.length(); i++) {
-                        if (commandString.charAt(i) == '!') {
-                            prefixIndex = i;
-                            for (int j = 0; j < commandString.length(); j++) {
-                                if (commandString.charAt(j) == ' ') {
-                                    endCommandIndex = j;
-                                }
-                            }
-                        }
-                    }
-                    String name = commandString.substring(prefixIndex, endCommandIndex);
-                    suite.setName(name);
+                    suite.setName(testSuite.getName());
 
                     log.info("Successfully loaded " + keySet.size() + " TestCases into TestSuite. (From file " + testSuite.getName() + ")");
                     suiteList.add(suite);
@@ -114,7 +105,7 @@ public class Runner {
      * Creates the list of commands to be accessed by EventHandler.onMessageReceived()
      */
     private static void createAndFillCommandsList() {
-        commandsList = new ArrayList();
+        commandsList = new ArrayList<>();
         commandsList.add(new RunAllTestsCommand());
         commandsList.add(new ShutdownCommand());
         commandsList.add(new PurgeCommand());

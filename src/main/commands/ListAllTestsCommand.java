@@ -46,10 +46,12 @@ public class ListAllTestsCommand implements Command {
         TextChannel channel = Runner.getApi().getTextChannelById(492774370125545472L);
         EmbedBuilder embedBuilder = new EmbedBuilder();
         embedBuilder.setColor(new Color(43, 104, 174));
+        int totalTests = 0;
         for (TestSuite suite : Runner.getTestSuiteList()) {
             embedBuilder.addField(suite.getName(), "Size: " + suite.size(), true);
+            totalTests += suite.size();
         }
-        embedBuilder.setFooter("Use `?runtest` <name> to run a specific test!", "https://image.freepik.com/free-icon/right-arrow-angle-and-horizontal-down-line-code-signs_318-53994.jpg");
+        embedBuilder.setFooter("Total Tests: " + totalTests, "https://image.freepik.com/free-icon/right-arrow-angle-and-horizontal-down-line-code-signs_318-53994.jpg");
         channel.sendMessage(embedBuilder.build()).queue();
     }
 }

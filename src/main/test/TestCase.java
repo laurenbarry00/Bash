@@ -6,7 +6,6 @@ import net.dv8tion.jda.core.requests.restaction.MessageAction;
 import org.json.JSONObject;
 
 import java.util.List;
-import java.util.UUID;
 
 public class TestCase {
     private String caseName;
@@ -26,6 +25,8 @@ public class TestCase {
 
     /**
      * Overloaded constructor to manually set all fields.
+     * @param title Command name
+     * @param output Regex pattern to match output
      * @param command Input to be executed upon case being run
      * @param expected The expected result of the TestCase
      * @param actual The actual result of the TestCase

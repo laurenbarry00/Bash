@@ -61,7 +61,7 @@
 	},
 	"FactorialTest":{
 		"input":"!calc 5!",
-		"output":"^(Unknown operator `!` at position)\\s\\d",
+		"output":"\b120\b",
 		"expectedResult":"PASS",
 		"actualResult":"PASS"
 	},
@@ -73,9 +73,9 @@
 	},
 	"FactorialWithExponentTest":{
 		"input":"!calc (2^3)!",
-		"output":"^(Unknown operator `!` at position)\\s\\d",
+		"output":"\b40320\b",
 		"expectedResult":"PASS",
-		"actualResult":"PASS"
+		"actualResult":"FAIL_UNEXPECTED_OUTPUT"
 	},
 	"PerfectSquareRootTest":{
 		"input":"!calc 4^(1/2)",
