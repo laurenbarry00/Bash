@@ -13,16 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a228221-0203-4fd9-a70e-e26ecd2a5895" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/bash/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bash/EventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/bash/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bash/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/ListAllTestsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/ListAllTestsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/RunAllTestsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/RunAllTestsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/RunTestCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/RunTestCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/TestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/TestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/TestSuite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Calc.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Calc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Dice.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Dice.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Bash_jar.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/BashBot/target/" />
@@ -185,8 +176,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/commands/ListAllTestsCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="54" column="58" lean-forward="true" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
+            <state relative-caret-position="413">
+              <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#getInput#0;class#ListAllTestsCommand#0" />
@@ -840,8 +831,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/commands/ListAllTestsCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="54" column="58" lean-forward="true" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
+        <state relative-caret-position="413">
+          <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#getInput#0;class#ListAllTestsCommand#0" />

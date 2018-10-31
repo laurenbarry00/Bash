@@ -1,13 +1,13 @@
 {
   "Name": {
       "input": "!calc --",
-      "output":  (blank),
+      "output":  "",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
   "Name": {
       "input": "!calc --",
-      "output":  (blank),
+      "output":  "",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   }
