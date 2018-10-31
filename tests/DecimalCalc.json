@@ -1,0 +1,74 @@
+{
+    "DecimalAdditionTest": {
+        "input": "!calc 1.54+7.29",
+        "output": "\b8.83\b",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "DecimalSubtractionTest": {
+        "input": "!calc 6.08-3.92",
+        "output": "\b2.16\b",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "DecimalMultiplicationTest": {
+        "input": "!calc 9.43*0.67",
+        "output": "\b6.3181\b",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "DecimalDivisionTest": {
+        "input": "!calc 8.38/2.15",
+        "output": "\b3.897674\b",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "DecimalSquareRootTest": {
+        "input": "!calc (4.71)^(1/2)",
+        "output": "\b2.170253\b",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "DecimalExponenentTest": {
+        "input": "!calc 5.65^3",
+        "output": "\b180.3621",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "DecimalNegativeAdditionTest": {
+        "input": "!calc 1.54+(-7.29)",
+        "output": "\b-5.75\b",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "DecimalNegativeSubtractionTest": {
+        "input": "!calc 6.08-(-3.92)",
+        "output": "\b10.00\b",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "DecimalNegativeMultiplicationTest": {
+        "input": "!calc 9.43*(-0.67)",
+        "output": "\b-6.3181\b",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "DecimalNegativeDivisionTest": {
+        "input": "!calc 8.38/(-2.15)",
+        "output": "\b-3.897674\b",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "DecimalNegativeExponentTest": {
+        "input": "!calc (-5.65)^3",
+        "output": "\b-180.3621\b",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "DecimalFactorialTest": {
+        "input": "!calc (-6.08)!",
+        "output": "\b-836.78\b",
+        "expectedResult": "PASS",
+        "actualResult": "FAIL_UNEXPECTED_OUTPUT"
+    }
+}
