@@ -1,0 +1,14 @@
+{
+  “BiteUserExists”: {
+      “input”: “!bite @bwilson”,
+      “output”: ,
+      “expectedResult”: “PASS”,
+      “actualResult”: “PASS”
+  },
+  “BiteEmptyString”: {
+      “input”: “!bite    ”,
+      “output”: ,
+      “expectedResult”: “PASS”,
+      “actualResult”: “PASS”
+  }
+}
