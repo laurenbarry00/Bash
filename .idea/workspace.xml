@@ -13,7 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a228221-0203-4fd9-a70e-e26ecd2a5895" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Bash_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/bash/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bash/EventHandler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/BashBot/target/" />
@@ -27,7 +27,7 @@
     <session id="31909783">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="52" />
+          <entry key="project.closed" value="53" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
@@ -61,7 +61,7 @@
         <counts>
           <entry key="class" value="60" />
           <entry key="iml" value="1" />
-          <entry key="java" value="85" />
+          <entry key="java" value="86" />
           <entry key="json" value="18" />
           <entry key="md" value="1" />
           <entry key="ser" value="1" />
@@ -73,7 +73,7 @@
         <counts>
           <entry key="CLASS" value="60" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="85" />
+          <entry key="JAVA" value="86" />
           <entry key="JSON" value="18" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="XML" value="10" />
@@ -82,7 +82,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="31" />
-          <entry key="java" value="51483" />
+          <entry key="java" value="51510" />
           <entry key="json" value="182" />
           <entry key="md" value="93" />
           <entry key="xml" value="61" />
@@ -90,7 +90,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="51483" />
+          <entry key="JAVA" value="51510" />
           <entry key="JSON" value="182" />
           <entry key="PLAIN_TEXT" value="124" />
           <entry key="XML" value="61" />
@@ -122,22 +122,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/test/TestSuite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4081">
-              <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
+            <state relative-caret-position="469">
+              <caret line="245" column="1" lean-forward="true" selection-start-line="245" selection-start-column="1" selection-end-line="245" selection-end-column="1" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/test/TestCase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1204">
-              <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="docComment;method#TestSuite#0;class#TestSuite#0" />
+                <element signature="method#TestSuite#0;class#TestSuite#0" />
+                <element signature="docComment;method#TestSuite#1;class#TestSuite#0" />
+                <element signature="method#TestSuite#1;class#TestSuite#0" />
+                <element signature="docComment;method#add#0;class#TestSuite#0" />
+                <element signature="method#add#0;class#TestSuite#0" />
+                <element signature="docComment;method#remove#0;class#TestSuite#0" />
+                <element signature="method#remove#0;class#TestSuite#0" />
+                <element signature="docComment;method#remove#1;class#TestSuite#0" />
+                <element signature="docComment;method#size#0;class#TestSuite#0" />
+                <element signature="docComment;method#get#0;class#TestSuite#0" />
+                <element signature="docComment;method#replace#0;class#TestSuite#0" />
+                <element signature="docComment;method#setName#0;class#TestSuite#0" />
+                <element signature="docComment;method#getName#0;class#TestSuite#0" />
+                <element signature="docComment;method#search#0;class#TestSuite#0" />
+                <element signature="method#search#0;class#TestSuite#0" />
+                <element signature="docComment;method#runAllTests#0;class#TestSuite#0" />
+                <element signature="method#runAllTests#0;class#TestSuite#0" />
+                <element signature="docComment;method#evaluateTests#0;class#TestSuite#0" />
+                <element signature="method#evaluateTests#0;class#TestSuite#0" />
+                <element signature="docComment;method#printTestResults#0;class#TestSuite#0" />
+                <element signature="method#printTestResults#0;class#TestSuite#0" />
+                <element signature="docComment;method#printReport#0;class#TestSuite#0" />
+                <element signature="method#printReport#0;class#TestSuite#0" />
+                <element signature="docComment;method#toJsonObject#0;class#TestSuite#0" />
+                <element signature="method#toJsonObject#0;class#TestSuite#0" />
               </folding>
             </state>
           </provider>
@@ -146,44 +159,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/bash/EventHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="252">
+              <caret line="37" column="62" selection-start-line="37" selection-start-column="62" selection-end-line="37" selection-end-column="62" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/commands/RunTestCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#696#697#0" expanded="true" />
-                <element signature="e#724#725#0" expanded="true" />
-                <element signature="e#876#877#0" expanded="true" />
-                <element signature="e#909#910#0" expanded="true" />
-                <element signature="e#1063#1064#0" expanded="true" />
-                <element signature="e#1097#1098#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/commands/ListAllTestsCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;method#getInput#0;class#ListAllTestsCommand#0" />
-                <element signature="docComment;method#getRegexInput#0;class#ListAllTestsCommand#0" />
-                <element signature="docComment;method#getRegexOutput#0;class#ListAllTestsCommand#0" />
-                <element signature="docComment;method#execute#0;class#ListAllTestsCommand#0" />
+                <element signature="docComment;method#onReady#0;class#EventHandler#0" />
+                <element signature="e#713#722#0" />
+                <element signature="method#onReady#0;class#EventHandler#0" />
+                <element signature="docComment;method#onMessageReceived#0;class#EventHandler#0" />
+                <element signature="e#1109#1118#0" />
+                <element signature="method#onMessageReceived#0;class#EventHandler#0" />
+                <element signature="docComment;method#onDisconnect#0;class#EventHandler#0" />
+                <element signature="e#3255#3264#0" />
+                <element signature="method#onDisconnect#0;class#EventHandler#0" />
               </folding>
             </state>
           </provider>
@@ -192,10 +179,50 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/bash/Runner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+            <state relative-caret-position="70">
+              <caret line="52" column="44" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#Runner#0" />
+                <element signature="docComment;method#loadToken#0;class#Runner#0" />
+                <element signature="method#loadToken#0;class#Runner#0" />
+                <element signature="docComment;method#loadJsonTestSuite#0;class#Runner#0" />
+                <element signature="method#loadJsonTestSuite#0;class#Runner#0" />
+                <element signature="docComment;method#createAndFillCommandsList#0;class#Runner#0" />
+                <element signature="method#createAndFillCommandsList#0;class#Runner#0" />
+                <element signature="docComment;method#getCommandsList#0;class#Runner#0" />
+                <element signature="docComment;method#getTestSuiteList#0;class#Runner#0" />
+                <element signature="docComment;method#getApi#0;class#Runner#0" />
+                <element signature="docComment;method#getLogger#0;class#Runner#0" />
+                <element signature="method#main#0;class#Runner#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/test/TestCase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="706">
+              <caret line="130" column="32" lean-forward="true" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
+              <folding>
+                <element signature="docComment;method#TestCase#0;class#TestCase#0" />
+                <element signature="method#TestCase#0;class#TestCase#0" />
+                <element signature="docComment;method#TestCase#1;class#TestCase#0" />
+                <element signature="method#TestCase#1;class#TestCase#0" />
+                <element signature="docComment;method#getInput#0;class#TestCase#0" />
+                <element signature="docComment;method#setInput#0;class#TestCase#0" />
+                <element signature="docComment;method#getOutput#0;class#TestCase#0" />
+                <element signature="docComment;method#setOutput#0;class#TestCase#0" />
+                <element signature="docComment;method#getExpectedResult#0;class#TestCase#0" />
+                <element signature="docComment;method#setExpectedResult#0;class#TestCase#0" />
+                <element signature="docComment;method#getActualResult#0;class#TestCase#0" />
+                <element signature="docComment;method#setActualResult#0;class#TestCase#0" />
+                <element signature="docComment;method#equals#0;class#TestCase#0" />
+                <element signature="method#equals#0;class#TestCase#0" />
+                <element signature="docComment;method#execute#0;class#TestCase#0" />
+                <element signature="method#execute#0;class#TestCase#0" />
+                <element signature="docComment;method#toJsonObject#0;class#TestCase#0" />
+                <element signature="method#toJsonObject#0;class#TestCase#0" />
               </folding>
             </state>
           </provider>
@@ -252,12 +279,12 @@
         <option value="$PROJECT_DIR$/src/main/commands/PurgeCommand.java" />
         <option value="$PROJECT_DIR$/src/main/commands/RunAllTestsCommand.java" />
         <option value="$PROJECT_DIR$/src/main/test/TestCase.java" />
-        <option value="$PROJECT_DIR$/src/main/bash/EventHandler.java" />
         <option value="$PROJECT_DIR$/src/main/test/TestResult.java" />
         <option value="$PROJECT_DIR$/src/main/test/TestSuite.java" />
         <option value="$PROJECT_DIR$/src/main/bash/Runner.java" />
         <option value="$PROJECT_DIR$/src/main/commands/RunTestCommand.java" />
         <option value="$PROJECT_DIR$/src/main/commands/ListAllTestsCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/bash/EventHandler.java" />
       </list>
     </option>
   </component>
@@ -406,7 +433,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1728" height="1117" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18802395" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -418,7 +444,7 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32791877" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3286334" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.3472081" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.3472081" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.36243656" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -757,16 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/TestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1204">
-          <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/commands/RunAllTestsCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
@@ -783,32 +799,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/TestSuite.java">
+    <entry file="file://$PROJECT_DIR$/src/main/commands/ListAllTestsCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4081">
-          <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
+        <state relative-caret-position="546">
+          <caret line="43" column="7" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/bash/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/bash/EventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#getInput#0;class#ListAllTestsCommand#0" />
+            <element signature="docComment;method#getRegexInput#0;class#ListAllTestsCommand#0" />
+            <element signature="docComment;method#getRegexOutput#0;class#ListAllTestsCommand#0" />
+            <element signature="docComment;method#execute#0;class#ListAllTestsCommand#0" />
           </folding>
         </state>
       </provider>
@@ -829,16 +829,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/commands/ListAllTestsCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/bash/EventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+        <state relative-caret-position="252">
+          <caret line="37" column="62" selection-start-line="37" selection-start-column="62" selection-end-line="37" selection-end-column="62" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#getInput#0;class#ListAllTestsCommand#0" />
-            <element signature="docComment;method#getRegexInput#0;class#ListAllTestsCommand#0" />
-            <element signature="docComment;method#getRegexOutput#0;class#ListAllTestsCommand#0" />
-            <element signature="docComment;method#execute#0;class#ListAllTestsCommand#0" />
+            <element signature="docComment;method#onReady#0;class#EventHandler#0" />
+            <element signature="e#713#722#0" />
+            <element signature="method#onReady#0;class#EventHandler#0" />
+            <element signature="docComment;method#onMessageReceived#0;class#EventHandler#0" />
+            <element signature="e#1109#1118#0" />
+            <element signature="method#onMessageReceived#0;class#EventHandler#0" />
+            <element signature="docComment;method#onDisconnect#0;class#EventHandler#0" />
+            <element signature="e#3255#3264#0" />
+            <element signature="method#onDisconnect#0;class#EventHandler#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/bash/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="52" column="44" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
+          <folding>
+            <element signature="docComment;class#Runner#0" />
+            <element signature="docComment;method#loadToken#0;class#Runner#0" />
+            <element signature="method#loadToken#0;class#Runner#0" />
+            <element signature="docComment;method#loadJsonTestSuite#0;class#Runner#0" />
+            <element signature="method#loadJsonTestSuite#0;class#Runner#0" />
+            <element signature="docComment;method#createAndFillCommandsList#0;class#Runner#0" />
+            <element signature="method#createAndFillCommandsList#0;class#Runner#0" />
+            <element signature="docComment;method#getCommandsList#0;class#Runner#0" />
+            <element signature="docComment;method#getTestSuiteList#0;class#Runner#0" />
+            <element signature="docComment;method#getApi#0;class#Runner#0" />
+            <element signature="docComment;method#getLogger#0;class#Runner#0" />
+            <element signature="method#main#0;class#Runner#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/TestSuite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="245" column="1" lean-forward="true" selection-start-line="245" selection-start-column="1" selection-end-line="245" selection-end-column="1" />
+          <folding>
+            <element signature="docComment;method#TestSuite#0;class#TestSuite#0" />
+            <element signature="method#TestSuite#0;class#TestSuite#0" />
+            <element signature="docComment;method#TestSuite#1;class#TestSuite#0" />
+            <element signature="method#TestSuite#1;class#TestSuite#0" />
+            <element signature="docComment;method#add#0;class#TestSuite#0" />
+            <element signature="method#add#0;class#TestSuite#0" />
+            <element signature="docComment;method#remove#0;class#TestSuite#0" />
+            <element signature="method#remove#0;class#TestSuite#0" />
+            <element signature="docComment;method#remove#1;class#TestSuite#0" />
+            <element signature="docComment;method#size#0;class#TestSuite#0" />
+            <element signature="docComment;method#get#0;class#TestSuite#0" />
+            <element signature="docComment;method#replace#0;class#TestSuite#0" />
+            <element signature="docComment;method#setName#0;class#TestSuite#0" />
+            <element signature="docComment;method#getName#0;class#TestSuite#0" />
+            <element signature="docComment;method#search#0;class#TestSuite#0" />
+            <element signature="method#search#0;class#TestSuite#0" />
+            <element signature="docComment;method#runAllTests#0;class#TestSuite#0" />
+            <element signature="method#runAllTests#0;class#TestSuite#0" />
+            <element signature="docComment;method#evaluateTests#0;class#TestSuite#0" />
+            <element signature="method#evaluateTests#0;class#TestSuite#0" />
+            <element signature="docComment;method#printTestResults#0;class#TestSuite#0" />
+            <element signature="method#printTestResults#0;class#TestSuite#0" />
+            <element signature="docComment;method#printReport#0;class#TestSuite#0" />
+            <element signature="method#printReport#0;class#TestSuite#0" />
+            <element signature="docComment;method#toJsonObject#0;class#TestSuite#0" />
+            <element signature="method#toJsonObject#0;class#TestSuite#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/TestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="130" column="32" lean-forward="true" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
+          <folding>
+            <element signature="docComment;method#TestCase#0;class#TestCase#0" />
+            <element signature="method#TestCase#0;class#TestCase#0" />
+            <element signature="docComment;method#TestCase#1;class#TestCase#0" />
+            <element signature="method#TestCase#1;class#TestCase#0" />
+            <element signature="docComment;method#getInput#0;class#TestCase#0" />
+            <element signature="docComment;method#setInput#0;class#TestCase#0" />
+            <element signature="docComment;method#getOutput#0;class#TestCase#0" />
+            <element signature="docComment;method#setOutput#0;class#TestCase#0" />
+            <element signature="docComment;method#getExpectedResult#0;class#TestCase#0" />
+            <element signature="docComment;method#setExpectedResult#0;class#TestCase#0" />
+            <element signature="docComment;method#getActualResult#0;class#TestCase#0" />
+            <element signature="docComment;method#setActualResult#0;class#TestCase#0" />
+            <element signature="docComment;method#equals#0;class#TestCase#0" />
+            <element signature="method#equals#0;class#TestCase#0" />
+            <element signature="docComment;method#execute#0;class#TestCase#0" />
+            <element signature="method#execute#0;class#TestCase#0" />
+            <element signature="docComment;method#toJsonObject#0;class#TestCase#0" />
+            <element signature="method#toJsonObject#0;class#TestCase#0" />
           </folding>
         </state>
       </provider>

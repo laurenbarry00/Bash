@@ -64,9 +64,7 @@ public class EventHandler extends ListenerAdapter {
             }
         } else { // User is human, who presumably wants to use commands to control Bash.
              List<Command> commandsList = Runner.getCommandsList();
-             for (int i = 0; i < commandsList.size(); i++) {
-                 Command current = commandsList.get(i);
-
+             for (Command current : commandsList) {
                  if (message.getContentDisplay().matches(current.getRegexInput())) {
                      Runner.getLogger().info(current.getInput() + " executed by " + author.getName() + "#" + author.getDiscriminator());
                      current.execute();

@@ -100,5 +100,23 @@
 		"output": "\b10\b",
 		"expectedResult":"PASS",
 		"actualResult":"PASS"
+	},
+	"CalcPiTest": {
+		"input":"!calc pi",
+		"output": "\b3.141593\b",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"CalcETest": {
+		"input":"!calc e",
+		"output": "\b2.1718282\b",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"CalcTauTest": {
+		"input":"!calc tau",
+		"output": "\b6.283185\b",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
 	}
 }
