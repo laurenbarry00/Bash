@@ -1,13 +1,13 @@
 {
   "BiteUserExists": {
     "input": "!bite @bwilson",
-      "output": ,
+      "output": "(**)(\\w+)(**)(\\s+))(bites)(\\s+)(**bwilson**)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
   "BiteEmptyString": {
       "input": "!bite    ",
-      "output": ,
+      "output": "You must mention a use you want to use the interaction for.",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   }
