@@ -89,6 +89,18 @@
 		"expectedResult":"PASS",
 		"actualResult":"PASS"
 	},
+	"CubeRootTest": {
+		"input":"!calc (8)^(1/3)",
+		"output":"\b2\b",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
+	"NegativeCubeRootTest": {
+		"input":"!calc (-8)^(⅓) ",
+		"output":"\b-2\b",
+		"expectedResult":"PASS",
+		"actualResult":"PASS"
+	},
 	"LongMathExpressionTest": {
 		"input":"!calc 5-4*8",
 		"output":"\b-27\b",
