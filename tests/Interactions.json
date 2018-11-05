@@ -109,7 +109,7 @@
   },
   "PanUserExists": {
     "input": "!pan @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(just)(\\s+)(hit)(\\s+)(**bwilson**)(\\s+)(with)(\\s+)(a)(\\s+)(pan)",
+      "output": "(**)(\\w+)(**)(\\s+))(just)(\\s+)(hit)(\\s+)(**bwilson**)(\\s+)(with)(\\s+)(a)(\\s+)(pan)(\\s+)(!)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
