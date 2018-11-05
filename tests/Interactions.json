@@ -25,7 +25,7 @@
   },
   "DivorceUserExists": {
     "input": "!divorce @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(divorce)(\\s+)(**bwilson**)",
+      "output": "(**)(\\w+)(**)(\\s+))(divorces)(\\s+)(**bwilson**)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -37,7 +37,7 @@
   },
   "EatsUserExists": {
     "input": "!eats @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(eats)(\\s+)(**bwilson**)",
+      "output": "(**)(\\w+)(**)(\\s+))(eats)(\\s+)(some)(\\s+)(food)(\\s+)(with)(\\s+)(**bwilson**)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -46,5 +46,174 @@
       "output": "You must mention a use you want to use the interaction for.",
       "expectedResult": "PASS",
       "actualResult": "PASS"
+  },
+    "HelloUserExists": {
+    "input": "!hello @bwilson",
+      "output": "(**)(\\w+)(**)(\\s+))(says)(\\s+)(hello)(\\s+)(to)(\\s+)(**bwilson**)",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "HelloEmptyString": {
+      "input": "!hello    ",
+      "output": "You must mention a use you want to use the interaction for.",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "HighfiveUserExists": {
+    "input": "!highfive @bwilson",
+      "output": "(**)(\\w+)(**)(\\s+))(high)(\\s+)(fives)(\\s+)(**bwilson**)",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "HighfiveEmptyString": {
+      "input": "!highfive    ",
+      "output": "You must mention a use you want to use the interaction for.",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "HugUserExists": {
+    "input": "!hug @bwilson",
+      "output": "(**)(\\w+)(**)(\\s+))(hugs)(\\s+)(**bwilson**)",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "HugEmptyString": {
+      "input": "!hug    ",
+      "output": "You must mention a use you want to use the interaction for.",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "KillUserExists": {
+    "input": "!kill @bwilson",
+      "output": "(**)(\\w+)(**)(\\s+))(wants)(\\s+)(to)(\\s+)(kill)(\\s+)(**bwilson**)",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "KillEmptyString": {
+      "input": "!kill    ",
+      "output": "You must mention a use you want to use the interaction for.",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "KissUserExists": {
+    "input": "!kiss @bwilson",
+      "output": "(**)(\\w+)(**)(\\s+))(kisses)(\\s+)(**bwilson**)",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "KissEmptyString": {
+      "input": "!kiss    ",
+      "output": "You must mention a use you want to use the interaction for.",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "PanUserExists": {
+    "input": "!pan @bwilson",
+      "output": "(**)(\\w+)(**)(\\s+))(just)(\\s+)(hit)(\\s+)(**bwilson**)(\\s+)(with)(\\s+)(a)(\\s+)(pan)",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "PanEmptyString": {
+      "input": "!pan    ",
+      "output": "You must mention a use you want to use the interaction for.",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "PatUserExists": {
+    "input": "!pat @bwilson",
+      "output": "(**)(\\w+)(**)(\\s+))(pats)(\\s+)(**bwilson**)",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "PatEmptyString": {
+      "input": "!pat    ",
+      "output": "You must mention a use you want to use the interaction for.",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "PokeUserExists": {
+    "input": "!poke @bwilson",
+      "output": "(**)(\\w+)(**)(\\s+))(pokes)(\\s+)(**bwilson**)",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "PokeEmptyString": {
+      "input": "!poke    ",
+      "output": "You must mention a use you want to use the interaction for.",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "PoutUserExists": {
+    "input": "!pout @bwilson",
+      "output": "(**)(\\w+)(**)(\\s+))(pouts)(\\s+)(at)(\\s+)(**bwilson**)",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "PoutEmptyString": {
+      "input": "!pout    ",
+      "output": "You must mention a use you want to use the interaction for.",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "PunchUserExists": {
+    "input": "!punch @bwilson",
+      "output": "(**)(\\w+)(**)(\\s+))(punches)(\\s+)(**bwilson**)",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "PunchEmptyString": {
+      "input": "!punch    ",
+      "output": "You must mention a use you want to use the interaction for.",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "ShrugUserExists": {
+    "input": "!shrug @bwilson",
+      "output": "(**)(\\w+)(**)(\\s+))(shrugs)(\\s+)(at)(\\s+)(**bwilson**)",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "ShrugEmptyString": {
+      "input": "!shrug    ",
+      "output": "You must mention a use you want to use the interaction for.",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "SlapUserExists": {
+    "input": "!slap @bwilson",
+      "output": "(**)(\\w+)(**)(\\s+))(slaps)(\\s+)(**bwilson**)",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "SlapEmptyString": {
+      "input": "!slap    ",
+      "output": "You must mention a use you want to use the interaction for.",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "TickleUserExists": {
+    "input": "!tickle @bwilson",
+      "output": "(**)(\\w+)(**)(\\s+))(tickles)(\\s+)(**bwilson**)",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "TickleEmptyString": {
+      "input": "!tickle    ",
+      "output": "You must mention a use you want to use the interaction for.",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "TriggeredUserExists": {
+    "input": "!triggered @bwilson",
+      "output": "(**)(\\w+)(**)(\\s+))(is)(\\s+)(triggered)(\\s+)(by)(\\s+)(**bwilson**)",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
+  },
+  "TriggeredEmptyString": {
+      "input": "!triggered    ",
+      "output": "You must mention a use you want to use the interaction for.",
+      "expectedResult": "PASS",
+      "actualResult": "PASS"
   }
 }
+
