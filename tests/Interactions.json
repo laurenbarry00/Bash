@@ -1,7 +1,7 @@
 {
   "BiteUserExists": {
-    "input": "!bite @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(bites)(\\s+)(**bwilson**)",
+    "input": "!bite <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(bites)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -12,8 +12,8 @@
       "actualResult": "PASS"
   },
   "CuddleUserExists": {
-    "input": "!cuddle @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(cuddles)(\\s+)(**bwilson**)",
+    "input": "!cuddle <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(cuddles)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -24,8 +24,8 @@
       "actualResult": "PASS"
   },
   "DivorceUserExists": {
-    "input": "!divorce @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(divorces)(\\s+)(**bwilson**)",
+    "input": "!divorce <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(divorces)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -36,8 +36,8 @@
       "actualResult": "PASS"
   },
   "EatsUserExists": {
-    "input": "!eats @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(eats)(\\s+)(some)(\\s+)(food)(\\s+)(with)(\\s+)(**bwilson**)",
+    "input": "!eats <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(eats)(\\s+)(some)(\\s+)(food)(\\s+)(with)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -48,8 +48,8 @@
       "actualResult": "PASS"
   },
     "HelloUserExists": {
-    "input": "!hello @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(says)(\\s+)(hello)(\\s+)(to)(\\s+)(**bwilson**)",
+    "input": "!hello <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(says)(\\s+)(hello)(\\s+)(to)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -60,8 +60,8 @@
       "actualResult": "PASS"
   },
   "HighfiveUserExists": {
-    "input": "!highfive @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(high)(\\s+)(fives)(\\s+)(**bwilson**)",
+    "input": "!highfive <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(high)(\\s+)(fives)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -72,8 +72,8 @@
       "actualResult": "PASS"
   },
   "HugUserExists": {
-    "input": "!hug @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(hugs)(\\s+)(**bwilson**)",
+    "input": "!hug <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(hugs)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -84,8 +84,8 @@
       "actualResult": "PASS"
   },
   "KillUserExists": {
-    "input": "!kill @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(wants)(\\s+)(to)(\\s+)(kill)(\\s+)(**bwilson**)",
+    "input": "!kill <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+)(wants)(\\s+)(to)(\\s+)(kill)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -96,8 +96,8 @@
       "actualResult": "PASS"
   },
   "KissUserExists": {
-    "input": "!kiss @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(kisses)(\\s+)(**bwilson**)",
+    "input": "!kiss <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(kisses)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -108,8 +108,8 @@
       "actualResult": "PASS"
   },
   "PanUserExists": {
-    "input": "!pan @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(just)(\\s+)(hit)(\\s+)(**bwilson**)(\\s+)(with)(\\s+)(a)(\\s+)(pan)(\\s+)(!)",
+    "input": "!pan <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(just)(\\s+)(hit)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)(\\s+)(with)(\\s+)(a)(\\s+)(pan)(\\s+)(\\!)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -120,8 +120,8 @@
       "actualResult": "PASS"
   },
   "PatUserExists": {
-    "input": "!pat @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(pats)(\\s+)(**bwilson**)",
+    "input": "!pat <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(pats)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -132,8 +132,8 @@
       "actualResult": "PASS"
   },
   "PokeUserExists": {
-    "input": "!poke @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(pokes)(\\s+)(**bwilson**)",
+    "input": "!poke <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(pokes)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -144,8 +144,8 @@
       "actualResult": "PASS"
   },
   "PoutUserExists": {
-    "input": "!pout @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(pouts)(\\s+)(at)(\\s+)(**bwilson**)",
+    "input": "!pout <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(pouts)(\\s+)(at)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -156,8 +156,8 @@
       "actualResult": "PASS"
   },
   "PunchUserExists": {
-    "input": "!punch @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(punches)(\\s+)(**bwilson**)",
+    "input": "!punch <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(punches)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -168,8 +168,8 @@
       "actualResult": "PASS"
   },
   "ShrugUserExists": {
-    "input": "!shrug @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(shrugs)(\\s+)(at)(\\s+)(**bwilson**)",
+    "input": "!shrug <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(shrugs)(\\s+)(at)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -180,8 +180,8 @@
       "actualResult": "PASS"
   },
   "SlapUserExists": {
-    "input": "!slap @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(slaps)(\\s+)(**bwilson**)",
+    "input": "!slap <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(slaps)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -192,8 +192,8 @@
       "actualResult": "PASS"
   },
   "TickleUserExists": {
-    "input": "!tickle @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(tickles)(\\s+)(**bwilson**)",
+    "input": "!tickle <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(tickles)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -204,8 +204,8 @@
       "actualResult": "PASS"
   },
   "TriggeredUserExists": {
-    "input": "!triggered @bwilson",
-      "output": "(**)(\\w+)(**)(\\s+))(is)(\\s+)(triggered)(\\s+)(by)(\\s+)(**bwilson**)",
+    "input": "!triggered <@502942798731804682>",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(is)(\\s+)(triggered)(\\s+)(by)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
@@ -216,4 +216,3 @@
       "actualResult": "PASS"
   }
 }
-
