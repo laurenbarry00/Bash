@@ -39,6 +39,14 @@ public class TestCase {
         actualResult = actual;
     }
 
+    public void setCaseName(String caseName) {
+        this.caseName = caseName;
+    }
+
+    public String getCaseName() {
+        return caseName;
+    }
+
     /**
      * Returns a TestCase's command input
      * @return input

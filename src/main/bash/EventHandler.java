@@ -3,6 +3,7 @@ package bash;
 import commands.Command;
 import net.dv8tion.jda.core.OnlineStatus;
 import net.dv8tion.jda.core.entities.Message;
+import net.dv8tion.jda.core.entities.MessageHistory;
 import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.DisconnectEvent;
 import net.dv8tion.jda.core.events.ReadyEvent;
@@ -39,7 +40,21 @@ public class EventHandler extends ListenerAdapter {
         User author = event.getAuthor();
         Message message = event.getMessage();
 
-        if (author.getName().equalsIgnoreCase("AvaIre")) { // Potential test result response
+        if (true) { // author.getName().equalsIgnoreCase("AvaIre")
+            String id = message.getId();
+            List<Message> history = event.getChannel().getHistoryBefore(id, 2).complete().getRetrievedHistory(); // Gets the message directly before the received message
+            Message m = history.get(0); // Message containing the test
+            String messageText;
+            if (m.getEmbeds().size() > 0) {
+                messageText = m.getEmbeds().get(0).getDescription();
+            } else {
+                messageText = m.getContentRaw();
+            }
+
+            for (TestSuite suite : Runner.getTestSuiteList()) {
+
+            }
+
             for (int i = 0; i < Runner.getTestSuiteList().size(); i++) {
                 TestSuite suite = Runner.getTestSuiteList().get(i);
                 for (int j = 0; j < suite.size(); j++) {

@@ -135,6 +135,15 @@ public class TestSuite {
         return -1;
     }
 
+    public int search(String title) {
+        for (int i = 0; i < cases.size(); i++) {
+            if (cases.get(i).getCaseName().equalsIgnoreCase(title)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     /**
      * Loops through all TestCases in the TestSuite and executes them. Counts and confirms the number of tests executed.
      * @param api JDA API
