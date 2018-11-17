@@ -24,3 +24,10 @@ hs_err_pid*
 
 # Text files
 *.txt
+
+# IntelliJ files
+.idea/
+.idea/artifacts/
+.idea/libraries/
+out/
+src/main/META-INF/
