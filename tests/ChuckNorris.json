@@ -1,0 +1,57 @@
+{
+    "ChuckNorrisNoMentionedUser": {
+        "input": "!chucknorris",
+        "output": "^.*(Chuck)\\s+(Norris).*$",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "ChuckNorrisStringMentionedUser": {
+        "input": "!chucknorris bwilson",
+        "output": "^.*(bwilson).*$",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "ChuckNorrisMentionedUser": {
+        "input": "!chucknorris <@502942798731804682>",
+        "output": "^.*(bwilson).*$",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "ChuckNoMentionedUser": {
+        "input": "!chuck",
+        "output": "^.*(Chuck)\\s+(Norris).*$",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "ChuckStringMentionedUser": {
+        "input": "!chuck bwilson",
+        "output": "^.*(bwilson).*$",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "ChuckMentionedUser": {
+        "input": "!chuck <@502942798731804682>",
+        "output": "^.*(bwilson).*$",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "NorrisNoMentionedUser": {
+        "input": "!norris",
+        "output": "^.*(Chuck)\\s+(Norris).*$",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "NorrisStringMentionedUser": {
+        "input": "!norris bwilson",
+        "output": "^.*(bwilson).*$",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "NorrisMentionedUser": {
+        "input": "!norris <@502942798731804682>",
+        "output": "^.*(bwilson).*$",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    }
+
+}
