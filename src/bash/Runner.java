@@ -31,6 +31,8 @@ public class Runner {
     private static String token = "";
     private static List<TestSuite> suiteList = new ArrayList<>();
 
+    private static boolean isAutoPurge = false; // Automatically delete message spam after executing tests?
+
 
     /**
      * Loads Bot token from file. Token is PRIVATE, not on source control.
@@ -145,8 +147,19 @@ public class Runner {
         return log;
     }
 
+    public static boolean isAutoPurge() {
+        return isAutoPurge;
+    }
+
     public static void main(String[] args) {
-        loadToken();
+        loadToken(); // Loads bot token from file
+
+        if (args.length > 0) {
+            if (args[0].equalsIgnoreCase("-purge")) {
+                isAutoPurge = true;
+                log.info("Auto Purge enabled.");
+            }
+        }
 
         try {
             api = new JDABuilder(AccountType.BOT)

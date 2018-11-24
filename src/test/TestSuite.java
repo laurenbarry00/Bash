@@ -4,7 +4,10 @@ import bash.Runner;
 import com.google.gson.JsonObject;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.JDA;
+import net.dv8tion.jda.core.entities.Message;
+import net.dv8tion.jda.core.entities.MessageEmbed;
 import net.dv8tion.jda.core.entities.TextChannel;
+import net.dv8tion.jda.core.requests.restaction.pagination.MessagePaginationAction;
 import org.slf4j.Logger;
 
 import java.awt.*;
@@ -166,30 +169,31 @@ public class TestSuite {
         channel.sendMessage("Ran " + testsRan + " out of " + size() + " tests.").queue();
 
         // Clearing out spam!
-        /*
-        MessagePaginationAction history = channel.getIterableHistory();
-        int deletedMessages = 0;
-        for (Message m : history) {
-            if (m.getAuthor().getName().equalsIgnoreCase("AvaIre")) {
-                m.delete().queue();
-                deletedMessages++;
-            } else if (m.getAuthor().getName().equalsIgnoreCase("Bash")) {
-                if (m.getEmbeds().size() > 0) {
-                    if (m.getEmbeds().get(0).getFooter() != null) {
-                        MessageEmbed.Footer foot = m.getEmbeds().get(0).getFooter();
-                        if (!foot.getText().equalsIgnoreCase("Bash Test Report")) {
-                            m.delete().queue();
-                            deletedMessages++;
-                        }
-                    }
-                } else {
+        if (Runner.isAutoPurge()) {
+            MessagePaginationAction history = channel.getIterableHistory();
+            int deletedMessages = 0;
+            for (Message m : history) {
+                if (m.getAuthor().getName().equalsIgnoreCase("AvaIre")) {
                     m.delete().queue();
                     deletedMessages++;
+                } else if (m.getAuthor().getName().equalsIgnoreCase("Bash")) {
+                    if (m.getEmbeds().size() > 0) {
+                        if (m.getEmbeds().get(0).getFooter() != null) {
+                            MessageEmbed.Footer foot = m.getEmbeds().get(0).getFooter();
+                            if (!foot.getText().equalsIgnoreCase("Bash Test Report")) {
+                                m.delete().queue();
+                                deletedMessages++;
+                            }
+                        }
+                    } else {
+                        m.delete().queue();
+                        deletedMessages++;
+                    }
                 }
             }
+            log.info("Purged " + deletedMessages + " messages after running tests.");
         }
-        log.info("Purged " + deletedMessages + " messages after running tests.");
-        */
+
     }
 
     /**
