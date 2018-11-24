@@ -48,10 +48,10 @@ public class ListAllTestsCommand implements Command {
         embedBuilder.setColor(new Color(43, 104, 174));
         int totalTests = 0;
         for (TestSuite suite : Runner.getTestSuiteList()) {
-            embedBuilder.addField(suite.getName(), "Size: " + suite.size(), true);
+            embedBuilder.addField(suite.getName(), "Size: " + suite.size(), false);
             totalTests += suite.size();
         }
-        embedBuilder.setFooter("Total Tests: " + totalTests, "https://image.freepik.com/free-icon/right-arrow-angle-and-horizontal-down-line-code-signs_318-53994.jpg");
+        embedBuilder.setDescription("Test Suites: " + Runner.getTestSuiteList().size() + "\nTotal Tests: " + totalTests);
         channel.sendMessage(embedBuilder.build()).queue();
     }
 }
