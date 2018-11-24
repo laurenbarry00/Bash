@@ -16,6 +16,7 @@ import test.TestSuite;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class EventHandler extends ListenerAdapter {
 
@@ -40,42 +41,31 @@ public class EventHandler extends ListenerAdapter {
         User author = event.getAuthor();
         Message message = event.getMessage();
 
-        if (true) { // author.getName().equalsIgnoreCase("AvaIre")
+        if (author.getName().equalsIgnoreCase("AvaIre")) { // // author.getName().equalsIgnoreCase("AvaIre")
             String id = message.getId();
-            List<Message> history = event.getChannel().getHistoryBefore(id, 2).complete().getRetrievedHistory(); // Gets the message directly before the received message
-            Message m = history.get(0); // Message containing the test
-            String messageText;
-            if (m.getEmbeds().size() > 0) {
-                messageText = m.getEmbeds().get(0).getDescription();
+            List<Message> history = event.getChannel().getHistoryBefore(id, 1).complete().getRetrievedHistory(); // Gets the message directly before the received message
+            Message testMessage = history.get(0); // Message containing the test
+            String testText;
+            if (testMessage.getEmbeds().size() > 0) {
+                testText = testMessage.getEmbeds().get(0).getDescription();
             } else {
-                messageText = m.getContentRaw();
+                testText = testMessage.getContentRaw();
             }
 
+            TestCase thisTestCase = null;
             for (TestSuite suite : Runner.getTestSuiteList()) {
-
-            }
-
-            for (int i = 0; i < Runner.getTestSuiteList().size(); i++) {
-                TestSuite suite = Runner.getTestSuiteList().get(i);
-                for (int j = 0; j < suite.size(); j++) {
-                    TestCase testCase = suite.get(i);
-                    String regexPattern = testCase.getOutput();
-
-                    if (message.getEmbeds().size() > 0) {
-                        String embedDescription = message.getEmbeds().get(0).getDescription();
-                        if (embedDescription.matches(regexPattern)) {
-                            testCase.setActualResult(TestResult.PASS);
-                        } else {
-                            testCase.setActualResult(TestResult.FAIL_UNEXPECTED_OUTPUT);
-                        }
-                    } else {
-                        if (message.getContentDisplay().matches(regexPattern)) {
-                            testCase.setActualResult(TestResult.PASS);
-                        } else {
-                            testCase.setActualResult(TestResult.FAIL_UNEXPECTED_OUTPUT);
-                        }
+                for (int i = 0; i < suite.size(); i++) {
+                    TestCase current = suite.get(i);
+                    if (current.getInput().equals(testText)) { // Identified which test case is being executed
+                        thisTestCase = current;
                     }
                 }
+            }
+
+            if (testText.matches(thisTestCase.getOutput())) {
+                thisTestCase.setActualResult(TestResult.PASS);
+            } else {
+                thisTestCase.setActualResult(TestResult.FAIL_UNEXPECTED_OUTPUT);
             }
         } else { // User is human, who presumably wants to use commands to control Bash.
              List<Command> commandsList = Runner.getCommandsList();
