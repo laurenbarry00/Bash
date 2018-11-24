@@ -1,6 +1,7 @@
 package commands;
 
 import bash.Runner;
+import net.dv8tion.jda.core.OnlineStatus;
 
 public class ShutdownCommand implements Command {
     private final String input = "?shutdown";
@@ -37,6 +38,7 @@ public class ShutdownCommand implements Command {
      * Executes all tests in Bash's TestSuite
      */
     public void execute() {
+        Runner.getApi().getPresence().setPresence(OnlineStatus.OFFLINE, true);
         Runner.getApi().shutdownNow();
     }
 }
