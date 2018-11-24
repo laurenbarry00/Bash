@@ -25,7 +25,7 @@
   },
   "DivorceUserExists": {
     "input": "!divorce <@502942798731804682>",
-      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+))(divorces)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
+      "output": "(\\*\\*)(\\w+)(\\*\\*)(\\s+)(divorces)(\\s+)(\\*\\*<@502942798731804682>\\*\\*)",
       "expectedResult": "PASS",
       "actualResult": "PASS"
   },
