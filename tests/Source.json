@@ -1,0 +1,20 @@
+{
+    "SourceValidCommand": {
+        "input": "!source !calc",
+        "output": "AvaIre source code for the Calculate Command command:",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "SourceInvalidCommand": {
+        "input": "!source hello",
+        "output": "Invalid command given, here is the full source code instead.",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    },
+    "SourceEmptyString": {
+        "input": "!source",
+        "output": "AvaIre source code:",
+        "expectedResult": "PASS",
+        "actualResult": "PASS"
+    }
+}
